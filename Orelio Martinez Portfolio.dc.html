@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/organic-3fcb45e8-9eb7-4a29-a054-bcd177585f43/styles.css">
+<script src="_ds/organic-3fcb45e8-9eb7-4a29-a054-bcd177585f43/_ds_bundle.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #f2e7d3; }
+  :root { --color-bg:#f2e7d3; --color-text:#1a1a1a; --color-neutral-100:#ece0c8; --color-neutral-300:#e6d6b8; --color-neutral-600:#6b6b6b; --color-neutral-700:#2b2b2b; --color-neutral-800:#2b2b2b; --color-neutral-900:#1a1a1a; --color-accent-100:#f3d9c9; --color-accent-200:#f0d6b0; --color-accent-300:#f4b400; --color-accent-700:#15369e; --color-accent-900:#8f2a12; --color-accent-2-100:#d9e5db; --color-accent-2-900:#1e4a31; }
+  a { color: #15369e; }
+  a:hover { color: #0f2570; }
+  @keyframes floatUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--accent:#c0381c; --accent-2:#2c6e49; --accent-deep:#8f2a12; --pf-cols:repeat(3,minmax(0,1fr)); font-family: var(--font-body,'Figtree',sans-serif); color: var(--color-text,#201e1d); background: var(--color-bg,#f5ead8); overflow-x: hidden;">
+
+  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px clamp(20px,5vw,64px); background: color-mix(in srgb, var(--color-bg,#f5ead8) 86%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-neutral-300,#d9cdba);">
+    <a href="#top" style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; color: var(--color-text,#201e1d); text-decoration: none; letter-spacing: .01em;">Orelio Martínez</a>
+    <div style="display: flex; align-items: center; gap: clamp(8px,2vw,28px);">
+      <a href="#work" style="font-size: 14.5px; font-weight: 600; color: var(--color-neutral-800,#3f3a35); text-decoration: none;" style-hover="color: var(--accent-deep);">Work</a>
+      <a href="#services" style="font-size: 14.5px; font-weight: 600; color: var(--color-neutral-800,#3f3a35); text-decoration: none;" style-hover="color: var(--accent-deep);">Services</a>
+      <a href="#experience" style="font-size: 14.5px; font-weight: 600; color: var(--color-neutral-800,#3f3a35); text-decoration: none;" style-hover="color: var(--accent-deep);">Experience</a>
+      <a href="Orelio%20Martinez%20Projects.dc.html" style="font-size: 14.5px; font-weight: 600; color: var(--color-neutral-800,#3f3a35); text-decoration: none;" style-hover="color: var(--accent-deep);">Gallery</a>
+      <a href="#contact" style="font-size: 14.5px; font-weight: 600; color: var(--color-neutral-800,#3f3a35); text-decoration: none;" style-hover="color: var(--accent-deep);">Contact</a>
+      <button onClick="{{ toggleLang }}" ref="{{ langBtnRef }}" style="font-size: 13px; font-weight: 800; letter-spacing: .04em; color: var(--accent-deep); background: transparent; border: 2px solid var(--accent); padding: 8px 14px; border-radius: 999px; cursor: pointer;" style-hover="background: color-mix(in srgb, var(--accent) 12%, transparent);">ES</button>
+      <a href="{{ resumeUrl }}" target="_blank" style="font-size: 14px; font-weight: 700; color: #fff; background: var(--accent); padding: 10px 18px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download Résumé</a>
+    </div>
+  </nav>
+
+  <header id="top" style="max-width: 1180px; margin: 0 auto; padding: clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(40px,6vw,72px); display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(28px,5vw,64px); align-items: center;">
+    <div style="animation: floatUp .7s ease both;">
+      <span style="display: inline-block; background: var(--color-accent-2-100,#e7ead9); color: var(--color-accent-2-900,#38402a); font-weight: 700; font-size: 13px; letter-spacing: .06em; padding: 7px 15px; border-radius: 999px; text-transform: uppercase;">Florida, USA · Bilingual EN/ES</span>
+      <h1 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(40px,6.5vw,74px); line-height: 1.02; margin: 20px 0 0; letter-spacing: .005em;">Architecture, engineering &amp; the land it stands on.</h1>
+      <p style="font-size: clamp(16px,1.6vw,19px); line-height: 1.55; color: var(--color-neutral-800,#3f3a35); max-width: 46ch; margin: 22px 0 0;">I'm <strong>Orelio Marcelo Martínez</strong> — architect, civil engineer, and project manager, and owner of <strong>Martínez Segura Multiservicios</strong>. I take projects from survey and estimate through design, construction, and close-out on both sides of the Americas — including work in Mexico (Felipe Ángeles International Airport), Guatemala (an apartment and office complex), El Salvador, and the United States.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px;">
+        <a href="#work" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--accent); padding: 14px 26px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-md);" style-hover="background: var(--accent-deep);">See selected work</a>
+        <a href="#contact" style="font-size: 15px; font-weight: 700; color: var(--accent-deep); background: transparent; padding: 14px 26px; border-radius: 999px; text-decoration: none; border: 2px solid var(--accent);" style-hover="background: color-mix(in srgb, var(--accent) 12%, transparent);">Get in touch</a>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: clamp(20px,4vw,48px); margin-top: 40px;">
+        <div><div style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 34px; color: var(--accent-deep); line-height: 1;">6+</div><div style="font-size: 13.5px; color: var(--color-neutral-700,#5c554e); margin-top: 4px;">Years across AEC</div></div>
+        <div><div style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 34px; color: var(--accent-deep); line-height: 1;">20+</div><div style="font-size: 13.5px; color: var(--color-neutral-700,#5c554e); margin-top: 4px;">Projects delivered</div></div>
+        <div><div style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 34px; color: var(--accent-deep); line-height: 1;">6</div><div style="font-size: 13.5px; color: var(--color-neutral-700,#5c554e); margin-top: 4px;">Pro certifications</div></div>
+      </div>
+    </div>
+    <sc-if value="{{ showPortrait }}" hint-placeholder-val="{{ true }}">
+      <div style="position: relative; aspect-ratio: 4/5; border-radius: 40% 40% 42% 42% / 46% 46% 40% 40%; overflow: hidden; box-shadow: var(--shadow-lg); background: var(--color-accent-100,#f3ddc9); animation: floatUp .9s ease both;">
+        <img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%282%29.jpeg" alt="Orelio Martínez holding project plans on site" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; filter: saturate(.92) brightness(1.02);">
+      </div>
+    </sc-if>
+  </header>
+
+  <section id="services" style="max-width: 1180px; margin: 0 auto; padding: clamp(36px,5vw,64px) clamp(20px,5vw,64px);">
+    <div style="max-width: 60ch;">
+      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-deep);">What I do</span>
+      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(28px,3.6vw,44px); margin: 10px 0 0; line-height: 1.08;">One team, from the ground survey to the final sign-off.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 18px; margin-top: 34px;">
+      <div style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); padding: 26px; box-shadow: var(--shadow-sm);">
+        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--color-accent-100,#f3ddc9); display: grid; place-items: center; font-size: 22px;">📐</div>
+        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">Topographic &amp; Cadastral Surveying</h3>
+        <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-700,#5c554e); margin: 0;">Georeferenced altimetry with contour lines and site detail. Deslinde, amojonamiento, and plans valid for municipal cadastral filing — with the digital CAD file for design.</p>
+      </div>
+      <div style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); padding: 26px; box-shadow: var(--shadow-sm);">
+        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--color-accent-2-100,#e7ead9); display: grid; place-items: center; font-size: 22px;">🏛️</div>
+        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">Architectural Design &amp; Documentation</h3>
+        <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-700,#5c554e); margin: 0;">Concept through construction documents for residential, institutional, and educational clients — managing scope, budget, and schedule end to end.</p>
+      </div>
+      <div style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); padding: 26px; box-shadow: var(--shadow-sm);">
+        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--color-accent-100,#f3ddc9); display: grid; place-items: center; font-size: 22px;">🏗️</div>
+        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">Steel Structures &amp; Construction</h3>
+        <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-700,#5c554e); margin: 0;">Fabrication and erection of industrial warehouses and steel structures, with site supervision and topographic control of axes and levels.</p>
+      </div>
+      <div style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); padding: 26px; box-shadow: var(--shadow-sm);">
+        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--color-accent-2-100,#e7ead9); display: grid; place-items: center; font-size: 22px;">🛰️</div>
+        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">GNSS Georeferencing &amp; Layout</h3>
+        <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-700,#5c554e); margin: 0;">Georeferenced points with GNSS receivers and total station for setting-out, construction control, and coordinate-accurate plans.</p>
+      </div>
+      <div style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); padding: 26px; box-shadow: var(--shadow-sm);">
+        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--color-accent-100,#f3ddc9); display: grid; place-items: center; font-size: 22px;">🧪</div>
+        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">Geotechnical &amp; Soil Studies</h3>
+        <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-700,#5c554e); margin: 0;">Soil boring and geotechnical investigation that define ground conditions and support foundation and structural design.</p>
+      </div>
+      <div style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); padding: 26px; box-shadow: var(--shadow-sm);">
+        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--color-accent-2-100,#e7ead9); display: grid; place-items: center; font-size: 22px;">🧊</div>
+        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">BIM, 3D Modeling &amp; Rendering</h3>
+        <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-700,#5c554e); margin: 0;">Revit and Civil 3D models with photoreal rendering in V-Ray, Lumion, D5, and Enscape — so clients see the project before it is built.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="max-width: 1180px; margin: 0 auto; padding: clamp(36px,5vw,64px) clamp(20px,5vw,64px);">
+    <div style="max-width: 58ch;">
+      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-deep);">Selected work</span>
+      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(28px,3.6vw,44px); margin: 10px 0 0; line-height: 1.08;">Field work and projects across Nicaragua &amp; the U.S.</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: var(--pf-cols); gap: 20px; margin-top: 34px;">
+
+      <article style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
+        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%283%29.jpeg" alt="GNSS survey receiver on tripod" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div>
+        <div style="padding: 18px 20px 22px;">
+          <span style="display: inline-block; background: var(--color-accent-2-100,#e7ead9); color: var(--color-accent-2-900,#38402a); font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Surveying</span>
+          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Topographic &amp; Cadastral Survey</h3>
+          <p style="font-size: 13px; font-weight: 700; color: var(--accent-deep); margin: 0 0 8px;">Jinotepe, Carazo · Nicaragua</p>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--color-neutral-700,#5c554e); margin: 0;">Georeferenced altimetry with contour lines over a 1,037 m² lot. Deslinde, amojonamiento, and plans valid for municipal cadastral filing, delivered with the digital design file.</p>
+        </div>
+      </article>
+
+      <article style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
+        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2812%29.jpeg" alt="Steel warehouse frame erection with total station" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div>
+        <div style="padding: 18px 20px 22px;">
+          <span style="display: inline-block; background: var(--color-accent-100,#f3ddc9); color: var(--accent-deep); font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Industrial</span>
+          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Industrial Warehouse — Steel Structure</h3>
+          <p style="font-size: 13px; font-weight: 700; color: var(--accent-deep); margin: 0 0 8px;">Nicaragua</p>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--color-neutral-700,#5c554e); margin: 0;">Steel-frame warehouse: column and portal-frame erection with topographic control of axes and levels from foundation layout through structure.</p>
+        </div>
+      </article>
+
+      <article style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
+        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%283%29.jpeg" alt="Steel columns in fabrication yard" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div>
+        <div style="padding: 18px 20px 22px;">
+          <span style="display: inline-block; background: var(--color-accent-100,#f3ddc9); color: var(--accent-deep); font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Steel</span>
+          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Steel Structure Fabrication</h3>
+          <p style="font-size: 13px; font-weight: 700; color: var(--accent-deep); margin: 0 0 8px;">Nicaragua</p>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--color-neutral-700,#5c554e); margin: 0;">Fabrication and assembly of heavy steel columns and moment frames in the yard, detailed and prepared for site erection.</p>
+        </div>
+      </article>
+
+      <article style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
+        <div style="aspect-ratio: 4/3; overflow: hidden; background:#fff;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.50%20PM.jpeg" alt="Architectural site analysis diagram with contours and sun paths" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="padding: 18px 20px 22px;">
+          <span style="display: inline-block; background: var(--color-accent-2-100,#e7ead9); color: var(--color-accent-2-900,#38402a); font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Institutional</span>
+          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">St. Helen's American Academy</h3>
+          <p style="font-size: 13px; font-weight: 700; color: var(--accent-deep); margin: 0 0 8px;">Chinandega · Nicaragua</p>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--color-neutral-700,#5c554e); margin: 0;">Design proposal (ArqLab) for the region's first bilingual school. Buildings abstract the academy's initials S, T and H — classrooms from preschool to secondary, auditorium, science, chemistry and robotics labs, library, plus courts, pool and green areas. ~2,766 m² built.</p>
+        </div>
+      </article>
+
+      <article style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
+        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%281%29.jpeg" alt="Soil boring drilling rig in the field" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div>
+        <div style="padding: 18px 20px 22px;">
+          <span style="display: inline-block; background: var(--color-accent-100,#f3ddc9); color: var(--accent-deep); font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Geotechnical</span>
+          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Geotechnical Soil Study</h3>
+          <p style="font-size: 13px; font-weight: 700; color: var(--accent-deep); margin: 0 0 8px;">Nicaragua</p>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--color-neutral-700,#5c554e); margin: 0;">Soil boring and geotechnical investigation defining ground conditions to support the design of foundations and structures.</p>
+        </div>
+      </article>
+
+      <article style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
+        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/02-cover-cultural-center.jpg" alt="Render of a timber gridshell cultural center" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding: 18px 20px 22px;">
+          <span style="display: inline-block; background: var(--color-accent-2-100,#e7ead9); color: var(--color-accent-2-900,#38402a); font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">3D / BIM</span>
+          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">3D Modeling &amp; Rendering</h3>
+          <p style="font-size: 13px; font-weight: 700; color: var(--accent-deep); margin: 0 0 8px;">Studio work</p>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--color-neutral-700,#5c554e); margin: 0;">BIM models and photoreal rendering that turn drawings into visualizations clients can understand before construction begins.</p>
+        </div>
+      </article>
+
+      <article style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
+        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%288%29.jpeg" alt="Large-scale LED stage structure being built" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95);"></div>
+        <div style="padding: 18px 20px 22px;">
+          <span style="display: inline-block; background: var(--color-accent-100,#f3ddc9); color: var(--accent-deep); font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">United States</span>
+          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Structural &amp; Event Staging</h3>
+          <p style="font-size: 13px; font-weight: 700; color: var(--accent-deep); margin: 0 0 8px;">United States</p>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--color-neutral-700,#5c554e); margin: 0;">Structural steel erection and large-scale event structures in the U.S., supporting project management and precise field coordination.</p>
+        </div>
+      </article>
+
+      <article style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
+        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM.jpeg" alt="Surveyor with total station documenting an existing building" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div>
+        <div style="padding: 18px 20px 22px;">
+          <span style="display: inline-block; background: var(--color-accent-2-100,#e7ead9); color: var(--color-accent-2-900,#38402a); font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Surveying</span>
+          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Cadastral Property Survey</h3>
+          <p style="font-size: 13px; font-weight: 700; color: var(--accent-deep); margin: 0 0 8px;">Nicaragua</p>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--color-neutral-700,#5c554e); margin: 0;">As-built and boundary survey with total station, defining property lines and dimensions of an existing structure for legal filing and renovation design.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="margin-top: 30px;">
+      <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0 0 16px;">In the field</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(180px,1fr)); gap: 12px;">
+        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2811%29.jpeg" alt="Setting out foundation layout" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);"></div>
+        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2810%29.jpeg" alt="Total station at steel yard" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);"></div>
+        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%284%29.jpeg" alt="GNSS receiver in a field" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);"></div>
+        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%285%29.jpeg" alt="Field vehicle on a survey site" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);"></div>
+        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%285%29.jpeg" alt="Crane erecting steel structure" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);"></div>
+        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%287%29.jpeg" alt="Event stage build with boom lift" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);"></div>
+        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%284%29.jpeg" alt="Utility pipes staged at a US jobsite" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);"></div>
+        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM.jpeg" alt="Steel ceiling framing during remodel" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" style="background: var(--color-neutral-100,#f0e6d6); border-top: 1px solid var(--color-neutral-300,#d9cdba); border-bottom: 1px solid var(--color-neutral-300,#d9cdba);">
+    <div style="max-width: 980px; margin: 0 auto; padding: clamp(44px,6vw,80px) clamp(20px,5vw,64px);">
+      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-deep);">Experience</span>
+      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(28px,3.6vw,44px); margin: 10px 0 34px; line-height: 1.08;">A career built site by site.</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+
+        <div style="display: grid; grid-template-columns: 190px 1fr; gap: clamp(12px,3vw,32px); padding: 22px 0; border-top: 1px solid var(--color-neutral-300,#d9cdba);">
+          <div style="font-size: 13.5px; font-weight: 700; color: var(--color-neutral-700,#5c554e);">2023 – Present<div style="font-weight: 500; color: var(--color-neutral-600,#736a60); margin-top: 3px;">Nicaragua</div></div>
+          <div>
+            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">Martínez Segura Multiservicios</h3>
+            <p style="font-size: 14.5px; font-weight: 700; color: var(--accent-deep); margin: 3px 0 8px;">Owner &amp; General Manager</p>
+            <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-800,#3f3a35); margin: 0;">Founder and owner of a multiservice engineering firm providing topographic and cadastral surveying, georeferenced mapping, property-appraisal support, architectural design, and construction and remodeling. I own the full operation — pricing, quoting, contracting, field crews, and delivery from first contact through payment and close-out.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 190px 1fr; gap: clamp(12px,3vw,32px); padding: 22px 0; border-top: 1px solid var(--color-neutral-300,#d9cdba);">
+          <div style="font-size: 13.5px; font-weight: 700; color: var(--color-neutral-700,#5c554e);">Jan 2026 – Present<div style="font-weight: 500; color: var(--color-neutral-600,#736a60); margin-top: 3px;">Remote · United States</div></div>
+          <div>
+            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">Veritas Drafting</h3>
+            <p style="font-size: 14.5px; font-weight: 700; color: var(--accent-deep); margin: 3px 0 8px;">General Manager</p>
+            <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-800,#3f3a35); margin: 0;">Direct the operational, financial, and client-service performance of a drafting and 3D-modeling outsourcing firm serving AEC clients. Built standardized workflows for drafting, modeling, rendering, and QA, and serve as primary contact translating client requirements into on-time, on-spec production.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 190px 1fr; gap: clamp(12px,3vw,32px); padding: 22px 0; border-top: 1px solid var(--color-neutral-300,#d9cdba);">
+          <div style="font-size: 13.5px; font-weight: 700; color: var(--color-neutral-700,#5c554e);">Mar 2024 – May 2025<div style="font-weight: 500; color: var(--color-neutral-600,#736a60); margin-top: 3px;">Nicaragua</div></div>
+          <div>
+            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">Eniconsa</h3>
+            <p style="font-size: 14.5px; font-weight: 700; color: var(--accent-deep); margin: 3px 0 8px;">Architect · Project Manager · Estimator</p>
+            <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-800,#3f3a35); margin: 0;">Managed the full project lifecycle for industrial, energy, and infrastructure projects — estimating, budgeting, scheduling, and execution through close-out. Prepared takeoffs and budgets, supervised field details, and coordinated contractors and suppliers across multi-site work.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 190px 1fr; gap: clamp(12px,3vw,32px); padding: 22px 0; border-top: 1px solid var(--color-neutral-300,#d9cdba);">
+          <div style="font-size: 13.5px; font-weight: 700; color: var(--color-neutral-700,#5c554e);">Mar 2024 – Mar 2025<div style="font-weight: 500; color: var(--color-neutral-600,#736a60); margin-top: 3px;">Nicaragua</div></div>
+          <div>
+            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">ArqLab</h3>
+            <p style="font-size: 14.5px; font-weight: 700; color: var(--accent-deep); margin: 3px 0 8px;">Architect · Land Surveyor · Project Manager</p>
+            <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-800,#3f3a35); margin: 0;">Led architectural projects from concept through construction documentation for residential, institutional, and religious-facility clients, performing land surveying and boundary analysis and directing teams to resolve design conflicts and maintain constructability.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 190px 1fr; gap: clamp(12px,3vw,32px); padding: 22px 0; border-top: 1px solid var(--color-neutral-300,#d9cdba);">
+          <div style="font-size: 13.5px; font-weight: 700; color: var(--color-neutral-700,#5c554e);">Nov 2021 – May 2022<div style="font-weight: 500; color: var(--color-neutral-600,#736a60); margin-top: 3px;">United States</div></div>
+          <div>
+            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">DPR Construction</h3>
+            <p style="font-size: 14.5px; font-weight: 700; color: var(--accent-deep); margin: 3px 0 8px;">Assistant Project Manager — Internship</p>
+            <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-800,#3f3a35); margin: 0;">Supported project-management teams on active commercial construction projects — assisting with submittals, RFIs, cost tracking, schedule updates, and subcontractor coordination while learning DPR's self-perform and lean-construction practices.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 190px 1fr; gap: clamp(12px,3vw,32px); padding: 22px 0; border-top: 1px solid var(--color-neutral-300,#d9cdba);">
+          <div style="font-size: 13.5px; font-weight: 700; color: var(--color-neutral-700,#5c554e);">Oct 2020 – Aug 2022<div style="font-weight: 500; color: var(--color-neutral-600,#736a60); margin-top: 3px;">Managua · Nicaragua</div></div>
+          <div>
+            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">Universidad Nacional de Ingeniería (UNI)</h3>
+            <p style="font-size: 14.5px; font-weight: 700; color: var(--accent-deep); margin: 3px 0 8px;">Architectural Advisor</p>
+            <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-800,#3f3a35); margin: 0;">Supervised and mentored emerging architects and engineers on projects advancing national infrastructure and urban development, reviewing drawings for code compliance, feasibility, and design quality.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 190px 1fr; gap: clamp(12px,3vw,32px); padding: 22px 0; border-top: 1px solid var(--color-neutral-300,#d9cdba); border-bottom: 1px solid var(--color-neutral-300,#d9cdba);">
+          <div style="font-size: 13.5px; font-weight: 700; color: var(--color-neutral-700,#5c554e);">Jun 2020 – Sep 2020<div style="font-weight: 500; color: var(--color-neutral-600,#736a60); margin-top: 3px;">Nicaragua</div></div>
+          <div>
+            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">MTI — Ministry of Transportation &amp; Infrastructure</h3>
+            <p style="font-size: 14.5px; font-weight: 700; color: var(--accent-deep); margin: 3px 0 8px;">Project Lead</p>
+            <p style="font-size: 14.5px; line-height: 1.55; color: var(--color-neutral-800,#3f3a35); margin: 0;">Led the "Vehicle Count for Road Design" study for the La Concepción–La Borgoña corridor, directing field data collection and traffic analysis; findings were adopted to inform new roadway design.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: clamp(44px,6vw,80px) clamp(20px,5vw,64px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px,5vw,56px);">
+    <div>
+      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-deep);">Credentials</span>
+      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.2vw,38px); margin: 10px 0 20px; line-height: 1.1;">Certifications &amp; licenses</h2>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+        <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--accent); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Associate Architect</strong> — American Institute of Architects (AIA) · Cert. #40873955 · 2025</span></li>
+        <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--accent); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Project Management Professional (PMP)</strong> — PMI · Cert. #12090792 · 2025</span></li>
+        <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--accent); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Certified Member</strong> — American Concrete Institute (ACI) · Cert. #2357545 · 2025</span></li>
+        <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--accent); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>NCEES Certified</strong> — National Council of Examiners for Engineering &amp; Surveying · Cert. #26-121-59 · 2025</span></li>
+        <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--accent); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>AXP Supervisor / Architect</strong> — NCARB · 2025</span></li>
+        <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--accent); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Autodesk Certified Professional</strong> — AutoCAD, Revit, Civil 3D · 2025</span></li>
+      </ul>
+    </div>
+    <div>
+      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-deep);">Toolkit</span>
+      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.2vw,38px); margin: 10px 0 20px; line-height: 1.1;">Skills &amp; software</h2>
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Design &amp; Modeling</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">AutoCAD</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Revit</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Civil 3D</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">SketchUp</span></div></div>
+        <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Rendering &amp; Visualization</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">V-Ray</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Lumion</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">D5</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Twinmotion</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Enscape</span></div></div>
+        <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Project &amp; Business Systems</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Procore</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Jira / Atlassian</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Salesforce</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">ServiceNow</span><span style="background: #fff; border: 1px solid var(--color-neutral-300,#d9cdba); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Workday</span></div></div>
+        <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Education</div><p style="font-size: 14px; line-height: 1.5; margin: 0; color: var(--color-neutral-800,#3f3a35);"><strong>B.Sc. Civil Engineering</strong>, UNI Nicaragua (2019–2024) · <strong>Minor in Architecture</strong>, UNI–ANIA (2024)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" style="background: linear-gradient(135deg,#a83017 0%,#c0381c 55%,#8f2a12 100%); color: #f3d9c9;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: clamp(48px,7vw,88px) clamp(20px,5vw,64px);">
+      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--color-accent-300,#e8b98d);">Let's build</span>
+      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(32px,5vw,58px); margin: 12px 0 0; line-height: 1.04; color: #fff; max-width: 20ch;">Have a site to survey or a project to build?</h2>
+      <p style="font-size: 17px; line-height: 1.55; max-width: 48ch; margin: 20px 0 32px; color: var(--color-accent-200,#f0cba6);">From a topographic survey and appraisal support to full design and construction — tell me about your property and I'll get you a clear quote.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px 40px; align-items: center;">
+        <a href="mailto:oreliomartinez0@gmail.com" style="font-size: 16px; font-weight: 700; color: var(--color-accent-900,#3a2412); background: var(--color-accent-300,#e8b98d); padding: 15px 28px; border-radius: 999px; text-decoration: none;" style-hover="background: #fff;">oreliomartinez0@gmail.com</a>
+        <a href="https://martinezseguramultiserviciosni.com" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 700; color: var(--color-accent-300,#e8b98d); background: transparent; padding: 13px 26px; border-radius: 999px; text-decoration: none; border: 2px solid var(--color-accent-300,#e8b98d);" style-hover="background: var(--color-accent-300,#e8b98d); color: var(--color-accent-900,#3a2412);">Visit martinezseguramultiserviciosni.com →</a>
+        <div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px;">
+          <span style="color: var(--color-accent-300,#e8b98d);">Nicaragua</span>
+        </div>
+      </div>
+      <div style="margin-top: 44px; padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--color-accent-300,#e8b98d) 30%, transparent); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--color-accent-200,#f0cba6);">
+        <span>© 2026 Orelio Marcelo Martínez</span>
+        <a href="{{ resumeUrl }}" target="_blank" style="color: var(--color-accent-300,#e8b98d); text-decoration: underline;">Download résumé (PDF)</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1280, &quot;height&quot;: 900 },
+  &quot;accent&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#c0381c&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#c0381c&quot;, &quot;#e0197f&quot;, &quot;#15369e&quot;, &quot;#2c6e49&quot;], &quot;section&quot;: &quot;Theme&quot; },
+  &quot;portfolioColumns&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;3&quot;, &quot;options&quot;: [&quot;2&quot;, &quot;3&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Layout&quot; },
+  &quot;showPortrait&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot; }
+}">
+class Component extends DCLogic {
+  componentDidMount() { this.applyTweaks(); this._lang = this._lang || 'en'; this.translate(this._lang); }
+  componentDidUpdate() { this.applyTweaks(); this.translate(this._lang || 'en'); }
+  toggleLang() {
+    this._lang = (this._lang === 'es') ? 'en' : 'es';
+    this.translate(this._lang);
+    if (this._langBtn) this._langBtn.textContent = this._lang === 'es' ? 'EN' : 'ES';
+  }
+  dict() {
+    return {
+      "Work":"Trabajo","Services":"Servicios","Experience":"Experiencia","Gallery":"Galería","Contact":"Contacto","Download Résumé":"Descargar CV",
+      "See selected work":"Ver proyectos","Get in touch":"Contáctame",
+      "Architecture, engineering & the land it stands on.":"Arquitectura, ingeniería y el terreno donde se construye.",
+      "Years across AEC":"Años en AEC","Projects delivered":"Proyectos entregados","Pro certifications":"Certificaciones",
+      "What I do":"Lo que hago","One team, from the ground survey to the final sign-off.":"Un solo equipo, del levantamiento del terreno a la entrega final.",
+      "Topographic & Cadastral Surveying":"Levantamientos topográficos y catastrales","Architectural Design & Documentation":"Diseño y documentación arquitectónica","Steel Structures & Construction":"Estructuras de acero y construcción","GNSS Georeferencing & Layout":"Georreferenciación GNSS y replanteo","Geotechnical & Soil Studies":"Estudios geotécnicos y de suelos","BIM, 3D Modeling & Rendering":"BIM, modelado 3D y renderizado",
+      "Selected work":"Proyectos","Field work and projects across Nicaragua & the U.S.":"Trabajo de campo y proyectos en Nicaragua y EE. UU.","In the field":"En el campo",
+      "A career built site by site.":"Una carrera construida obra por obra.",
+      "Owner & General Manager":"Propietario y gerente general","General Manager":"Gerente general","Architect · Project Manager · Estimator":"Arquitecto · Gerente de proyecto · Estimador","Architect · Land Surveyor · Project Manager":"Arquitecto · Topógrafo · Gerente de proyecto","Assistant Project Manager — Internship":"Asistente de gerente de proyecto — Pasantía","Architectural Advisor":"Asesor arquitectónico","Project Lead":"Líder de proyecto",
+      "Credentials":"Credenciales","Certifications & licenses":"Certificaciones y licencias","Toolkit":"Herramientas","Skills & software":"Habilidades y software","Design & Modeling":"Diseño y modelado","Rendering & Visualization":"Renderizado y visualización","Project & Business Systems":"Sistemas de proyecto y negocio","Education":"Educación",
+      "Let's build":"Construyamos","Have a site to survey or a project to build?":"¿Tienes un terreno que levantar o un proyecto que construir?","From a topographic survey and appraisal support to full design and construction — tell me about your property and I'll get you a clear quote.":"Desde un levantamiento topográfico y apoyo en avalúos hasta diseño y construcción — cuéntame sobre tu propiedad y te doy una cotización clara.","Download résumé (PDF)":"Descargar CV (PDF)",
+      "Florida, USA · Bilingual EN/ES":"Florida, EE. UU. · Bilingüe EN/ES",
+      "I'm":"Soy",
+      "— architect, civil engineer, and project manager, and owner of":"— arquitecto, ingeniero civil y gerente de proyectos, y propietario de",
+      ". I take projects from survey and estimate through design, construction, and close-out on both sides of the Americas — including work in Mexico (Felipe Ángeles International Airport), Guatemala (an apartment and office complex), El Salvador, and the United States.":". Llevo los proyectos desde el levantamiento y el presupuesto hasta el diseño, la construcción y la entrega, a ambos lados del continente — incluyendo trabajos en México (Aeropuerto Internacional Felipe Ángeles), Guatemala (un complejo de apartamentos y oficinas), El Salvador y Estados Unidos.",
+      "Georeferenced altimetry with contour lines and site detail. Deslinde, amojonamiento, and plans valid for municipal cadastral filing — with the digital CAD file for design.":"Altimetría georreferenciada con curvas de nivel y detalles del sitio. Deslinde, amojonamiento y planos con validez para trámite ante catastro municipal — con el archivo CAD digital para diseño.",
+      "Concept through construction documents for residential, institutional, and educational clients — managing scope, budget, and schedule end to end.":"Del concepto a los planos constructivos para clientes residenciales, institucionales y educativos — gestionando alcance, presupuesto y cronograma de principio a fin.",
+      "Fabrication and erection of industrial warehouses and steel structures, with site supervision and topographic control of axes and levels.":"Fabricación y montaje de naves industriales y estructuras de acero, con supervisión de obra y control topográfico de ejes y niveles.",
+      "Georeferenced points with GNSS receivers and total station for setting-out, construction control, and coordinate-accurate plans.":"Puntos georreferenciados con receptores GNSS y estación total para replanteo, control de obra y planos con coordenadas precisas.",
+      "Soil boring and geotechnical investigation that define ground conditions and support foundation and structural design.":"Sondeos y estudios geotécnicos que definen las condiciones del terreno y fundamentan el diseño de fundaciones y estructuras.",
+      "Revit and Civil 3D models with photoreal rendering in V-Ray, Lumion, D5, and Enscape — so clients see the project before it is built.":"Modelos en Revit y Civil 3D con renderizado fotorrealista en V-Ray, Lumion, D5 y Enscape — para que el cliente vea el proyecto antes de construirlo.",
+      "Surveying":"Topografía","Industrial":"Industrial","Steel":"Acero","Institutional":"Institucional","Geotechnical":"Geotecnia","United States":"EE. UU.","Studio work":"Trabajo de estudio",
+      "Topographic & Cadastral Survey":"Levantamiento topográfico y catastral",
+      "Industrial Warehouse — Steel Structure":"Nave industrial — estructura de acero",
+      "Steel Structure Fabrication":"Fabricación de estructuras de acero",
+      "Geotechnical Soil Study":"Estudio geotécnico de suelos",
+      "3D Modeling & Rendering":"Modelado 3D y renderizado",
+      "Structural & Event Staging":"Estructuras y montaje de eventos",
+      "Cadastral Property Survey":"Levantamiento catastral de propiedad",
+      "Jinotepe, Carazo · Nicaragua":"Jinotepe, Carazo · Nicaragua","Chinandega · Nicaragua":"Chinandega · Nicaragua","Nicaragua":"Nicaragua",
+      "Georeferenced altimetry with contour lines over a 1,037 m² lot. Deslinde, amojonamiento, and plans valid for municipal cadastral filing, delivered with the digital design file.":"Altimetría georreferenciada con curvas de nivel sobre un lote de 1,037 m². Deslinde, amojonamiento y planos con validez para trámite ante catastro municipal, entregados con el archivo digital de diseño.",
+      "Steel-frame warehouse: column and portal-frame erection with topographic control of axes and levels from foundation layout through structure.":"Nave con estructura de acero: montaje de columnas y marcos con control topográfico de ejes y niveles, desde el replanteo de fundaciones hasta la estructura.",
+      "Fabrication and assembly of heavy steel columns and moment frames in the yard, detailed and prepared for site erection.":"Fabricación y armado de columnas de acero y marcos a momento en el taller, detallados y preparados para el montaje en sitio.",
+      "Design proposal (ArqLab) for the region's first bilingual school. Buildings abstract the academy's initials S, T and H — classrooms from preschool to secondary, auditorium, science, chemistry and robotics labs, library, plus courts, pool and green areas. ~2,766 m² built.":"Propuesta de diseño (ArqLab) para la primera escuela bilingüe de la región. Los edificios abstraen las iniciales S, T y H de la academia — aulas de preescolar a secundaria, auditorio, laboratorios de ciencias, química y robótica, biblioteca, más canchas, piscina y áreas verdes. ~2,766 m² construidos.",
+      "Soil boring and geotechnical investigation defining ground conditions to support the design of foundations and structures.":"Sondeo y estudio geotécnico que definen las condiciones del terreno para fundamentar el diseño de fundaciones y estructuras.",
+      "BIM models and photoreal rendering that turn drawings into visualizations clients can understand before construction begins.":"Modelos BIM y renderizado fotorrealista que convierten los planos en visualizaciones que el cliente entiende antes de iniciar la construcción.",
+      "Structural steel erection and large-scale event structures in the U.S., supporting project management and precise field coordination.":"Montaje de estructuras de acero y estructuras de eventos a gran escala en EE. UU., apoyando la gestión de proyecto y la coordinación precisa en campo.",
+      "As-built and boundary survey with total station, defining property lines and dimensions of an existing structure for legal filing and renovation design.":"Levantamiento de estado actual y de linderos con estación total, definiendo las líneas de propiedad y dimensiones de una estructura existente para trámite legal y diseño de remodelación.",
+      "2023 – Present":"2023 – Actualidad","Jan 2026 – Present":"Ene 2026 – Actualidad","Oct 2020 – Aug 2022":"Oct 2020 – Ago 2022",
+      "Remote · United States":"Remoto · EE. UU.","Managua · Nicaragua":"Managua · Nicaragua",
+      "Founder and owner of a multiservice engineering firm providing topographic and cadastral surveying, georeferenced mapping, property-appraisal support, architectural design, and construction and remodeling. I own the full operation — pricing, quoting, contracting, field crews, and delivery from first contact through payment and close-out.":"Fundador y propietario de una empresa de multiservicios de ingeniería que ofrece levantamientos topográficos y catastrales, mapeo georreferenciado, apoyo en avalúos, diseño arquitectónico y construcción y remodelación. Dirijo toda la operación — precios, cotización, contratación, cuadrillas de campo y entrega, desde el primer contacto hasta el pago y el cierre.",
+      "Direct the operational, financial, and client-service performance of a drafting and 3D-modeling outsourcing firm serving AEC clients. Built standardized workflows for drafting, modeling, rendering, and QA, and serve as primary contact translating client requirements into on-time, on-spec production.":"Dirijo el desempeño operativo, financiero y de servicio al cliente de una firma de dibujo y modelado 3D que atiende a clientes AEC. Creé flujos de trabajo estandarizados para dibujo, modelado, renderizado y control de calidad, y soy el contacto principal que traduce los requerimientos del cliente en una producción puntual y conforme.",
+      "Managed the full project lifecycle for industrial, energy, and infrastructure projects — estimating, budgeting, scheduling, and execution through close-out. Prepared takeoffs and budgets, supervised field details, and coordinated contractors and suppliers across multi-site work.":"Gestioné el ciclo completo de proyectos industriales, energéticos y de infraestructura — estimación, presupuesto, programación y ejecución hasta el cierre. Preparé cuantificaciones y presupuestos, supervisé detalles en campo y coordiné contratistas y proveedores en obras multisitio.",
+      "Led architectural projects from concept through construction documentation for residential, institutional, and religious-facility clients, performing land surveying and boundary analysis and directing teams to resolve design conflicts and maintain constructability.":"Lideré proyectos arquitectónicos desde el concepto hasta la documentación constructiva para clientes residenciales, institucionales y religiosos, realizando levantamientos y análisis de linderos y dirigiendo equipos para resolver conflictos de diseño y mantener la constructibilidad.",
+      "Supported project-management teams on active commercial construction projects — assisting with submittals, RFIs, cost tracking, schedule updates, and subcontractor coordination while learning DPR's self-perform and lean-construction practices.":"Apoyé a los equipos de gestión de proyecto en obras comerciales activas — asistiendo con submittals, RFIs, control de costos, actualización de cronogramas y coordinación de subcontratistas, mientras aprendía las prácticas de autoejecución y construcción lean de DPR.",
+      "Supervised and mentored emerging architects and engineers on projects advancing national infrastructure and urban development, reviewing drawings for code compliance, feasibility, and design quality.":"Supervisé y orienté a arquitectos e ingenieros emergentes en proyectos que impulsan la infraestructura nacional y el desarrollo urbano, revisando planos por cumplimiento de códigos, factibilidad y calidad de diseño.",
+      "Also along the way":"También en el camino","Pro Sales Associate":"Asociado de ventas Pro","Associate Customer Success":"Asociado de Customer Success","Customer Care Advisor (B2B)":"Asesor de atención al cliente (B2B)",
+      "Oct 2025 – Jan 2026 · United States":"Oct 2025 – Ene 2026 · EE. UU.","Dec 2023 – Nov 2024 · Remote":"Dic 2023 – Nov 2024 · Remoto","Aug 2022 – Nov 2023 · Remote":"Ago 2022 – Nov 2023 · Remoto",
+      "Associate Architect":"Arquitecto Asociado","Certified Member":"Miembro Certificado","NCEES Certified":"Certificado NCEES","AXP Supervisor / Architect":"Supervisor AXP / Arquitecto",
+      "B.Sc. Civil Engineering":"Lic. en Ingeniería Civil","Minor in Architecture":"Minor en Arquitectura"
+    };
+  }
+  snapshot() {
+    if (!this.rootRef) return;
+    if (this._nodes) { for (const n of this._nodes) { if (n.__en != null) n.nodeValue = n.__en; } }
+    this._nodes = [];
+    const w = document.createTreeWalker(this.rootRef, NodeFilter.SHOW_TEXT, null);
+    let n; while ((n = w.nextNode())) { if (this._langBtn && n.parentNode === this._langBtn) continue; const t = n.nodeValue; if (t && t.trim()) { if (n.__en == null) n.__en = t; this._nodes.push(n); } }
+  }
+  translate(lang) {
+    this.snapshot();
+    if (!this._nodes) return;
+    const d = this.dict();
+    for (const n of this._nodes) { const en = n.__en; const key = en.trim(); if (lang === 'es' && d[key]) { const lead = en.slice(0, en.length - en.trimStart().length); const trail = en.slice(en.trimEnd().length); n.nodeValue = lead + d[key] + trail; } else { n.nodeValue = en; } }
+  }
+  applyTweaks() {
+    const el = this.rootRef;
+    if (!el) return;
+    if (this.props.accent) el.style.setProperty('--accent', this.props.accent);
+    const cols = this.props.portfolioColumns ?? '3';
+    el.style.setProperty('--pf-cols', `repeat(${cols}, minmax(0,1fr))`);
+  }
+  renderVals() {
+    return {
+      rootRef: (el) => { this.rootRef = el; this.applyTweaks(); },
+      toggleLang: () => this.toggleLang(),
+      langBtnRef: (el) => { this._langBtn = el; },
+      showPortrait: this.props.showPortrait ?? true,
+      resumeUrl: 'Orelio Martinez Resume.html'
+    };
+  }
+}
+</script>
+</body>
+</html>

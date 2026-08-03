@@ -17,9 +17,19 @@
   html { scroll-behavior: smooth; }
   body { margin: 0; background: #f2e7d3; }
   :root { --color-bg:#f2e7d3; --color-text:#1a1a1a; --color-neutral-100:#ece0c8; --color-neutral-300:#e6d6b8; --color-neutral-600:#6b6b6b; --color-neutral-700:#2b2b2b; --color-neutral-800:#2b2b2b; --color-neutral-900:#1a1a1a; --color-accent-100:#f3d9c9; --color-accent-200:#f0d6b0; --color-accent-300:#f4b400; --color-accent-700:#15369e; --color-accent-900:#8f2a12; --color-accent-2-100:#d9e5db; --color-accent-2-900:#1e4a31; }
+  * { box-sizing: border-box; }
   a { color: #15369e; }
   a:hover { color: #0f2570; }
   figure { margin: 0; }
+  .slide-head { display: grid; grid-template-columns: auto 1fr; gap: clamp(16px,3vw,32px); align-items: start; margin: 0 0 26px; }
+  .slide-num { font-family: 'Caprasimo', serif; font-size: clamp(38px,7vw,80px); line-height: .78; color: var(--accent); }
+  @media (max-width: 900px) { .gal-grid { grid-template-columns: repeat(2,minmax(0,1fr)) !important; } }
+  @media (max-width: 560px) {
+    .gal-grid { grid-template-columns: 1fr !important; }
+    .slide-head { grid-template-columns: 1fr; gap: 6px; }
+    .slide-num { font-size: 46px; }
+    nav { padding-left: 16px !important; padding-right: 16px !important; }
+  }
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="--accent:#c0381c; --accent-2:#2c6e49; --accent-deep:#8f2a12; --g-cols:repeat(3,minmax(0,1fr)); font-family: var(--font-body,'Figtree',sans-serif); color: var(--color-text,#201e1d); background: var(--color-bg,#f5ead8); overflow-x: hidden;">
@@ -40,9 +50,14 @@
   </header>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: clamp(20px,3vw,32px) clamp(20px,5vw,64px);">
-    <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0 0 6px;">Surveying &amp; Georeferencing</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700,#5c554e); margin: 0 0 22px;">Topographic, cadastral, and GNSS field work · Nicaragua</p>
-    <div style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
+    <div class="slide-head">
+      <div class="slide-num">01</div>
+      <div>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.6vw,40px); margin: 0 0 8px; line-height: 1.05;">Surveying &amp; Georeferencing</h2>
+        <p style="font-size: clamp(14.5px,1.5vw,17px); color: var(--color-neutral-700,#5c554e); line-height: 1.55; max-width: 62ch; margin: 0;">Establishing precise control points, elevation and contour data, and as-built records — the georeferenced foundation every design and permit is built on. Captured with GNSS receivers and total stations across Nicaragua.</p>
+      </div>
+    </div>
+    <div class="gal-grid" style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%283%29.jpeg" alt="GNSS receiver on tripod" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">GNSS georeferencing — establishing control points</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%284%29.jpeg" alt="GNSS receiver in a field" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Field georeferencing on an open lot</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM.jpeg" alt="Surveyor documenting an existing building" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">As-built survey of an existing structure</figcaption></figure>
@@ -53,9 +68,14 @@
   </section>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: clamp(20px,3vw,32px) clamp(20px,5vw,64px);">
-    <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0 0 6px;">Steel &amp; Construction</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700,#5c554e); margin: 0 0 22px;">Fabrication, erection, and geotechnical work · Nicaragua</p>
-    <div style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
+    <div class="slide-head">
+      <div class="slide-num">02</div>
+      <div>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.6vw,40px); margin: 0 0 8px; line-height: 1.05;">Steel &amp; Construction</h2>
+        <p style="font-size: clamp(14.5px,1.5vw,17px); color: var(--color-neutral-700,#5c554e); line-height: 1.55; max-width: 62ch; margin: 0;">Heavy steel columns fabricated in the yard, warehouse frames erected in the field, and geotechnical soil borings that confirm what the ground can carry — with topographic control keeping every axis and level true.</p>
+      </div>
+    </div>
+    <div class="gal-grid" style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2812%29.jpeg" alt="Steel warehouse frame erection" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Industrial warehouse — steel frame erection</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%283%29.jpeg" alt="Steel columns in fabrication yard" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Heavy steel columns in fabrication</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM.jpeg" alt="Steel ceiling framing during remodel" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Steel ceiling framing — interior remodel</figcaption></figure>
@@ -64,9 +84,14 @@
   </section>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: clamp(20px,3vw,32px) clamp(20px,5vw,64px);">
-    <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0 0 6px;">Design, 3D &amp; Institutional</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700,#5c554e); margin: 0 0 22px;">Site analysis, modeling, and documentation</p>
-    <div style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
+    <div class="slide-head">
+      <div class="slide-num">03</div>
+      <div>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.6vw,40px); margin: 0 0 8px; line-height: 1.05;">Design, 3D &amp; Institutional</h2>
+        <p style="font-size: clamp(14.5px,1.5vw,17px); color: var(--color-neutral-700,#5c554e); line-height: 1.55; max-width: 62ch; margin: 0;">Where survey data becomes design: analysis of contours, sun paths, and views feeds BIM models and the documentation carried through to institutional projects.</p>
+      </div>
+    </div>
+    <div class="gal-grid" style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden; background:#fff;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.50%20PM.jpeg" alt="Architectural site analysis diagram" style="width:100%;height:100%;object-fit:contain;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Site analysis — contours, sun paths &amp; views</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%282%29.jpeg" alt="3D render" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">3D modeling &amp; photoreal rendering</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%282%29.jpeg" alt="Reviewing plans on site" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 20%;filter:saturate(.92);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Reviewing site plans on a hospital project</figcaption></figure>
@@ -75,9 +100,14 @@
   </section>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: clamp(20px,3vw,32px) clamp(20px,5vw,64px);">
-    <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0 0 6px;">Architecture &amp; Visualization</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700,#5c554e); margin: 0 0 22px;">Concept renders and interiors — modeled and rendered in-house</p>
-    <div style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
+    <div class="slide-head">
+      <div class="slide-num">04</div>
+      <div>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.6vw,40px); margin: 0 0 8px; line-height: 1.05;">Architecture &amp; Visualization</h2>
+        <p style="font-size: clamp(14.5px,1.5vw,17px); color: var(--color-neutral-700,#5c554e); line-height: 1.55; max-width: 62ch; margin: 0;">Concept renders and interiors modeled and rendered in-house in Revit, V-Ray, Lumion, D5, and Enscape — so clients experience a space before a single wall is built.</p>
+      </div>
+    </div>
+    <div class="gal-grid" style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/02-cover-cultural-center.jpg" alt="Timber gridshell cultural center render" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Cultural center — timber gridshell canopy</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/09-render-cultural-atrium.jpg" alt="Cultural center interior atrium render" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Cultural center — interior atrium</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/04-render-hospital-wing.jpg" alt="Hospital wing exterior render" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Hospital wing — exterior</figcaption></figure>
@@ -90,9 +120,14 @@
   </section>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: clamp(20px,3vw,32px) clamp(20px,5vw,64px);">
-    <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0 0 6px;">Construction Documents</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700,#5c554e); margin: 0 0 22px;">Architectural and structural drawings — plans, elevations &amp; shop details</p>
-    <div style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
+    <div class="slide-head">
+      <div class="slide-num">05</div>
+      <div>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.6vw,40px); margin: 0 0 8px; line-height: 1.05;">Construction Documents</h2>
+        <p style="font-size: clamp(14.5px,1.5vw,17px); color: var(--color-neutral-700,#5c554e); line-height: 1.55; max-width: 62ch; margin: 0;">Architectural and structural drawings — plans, elevations, and shop details — coordinated and issued for construction.</p>
+      </div>
+    </div>
+    <div class="gal-grid" style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden; background:#fff;"><img src="uploads/10-drawing-floor-plan.png" alt="Architectural floor plan drawing" style="width:100%;height:100%;object-fit:contain;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Auditorium — architectural floor plan</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden; background:#fff;"><img src="uploads/11-drawing-elevations.png" alt="Architectural elevations drawing" style="width:100%;height:100%;object-fit:contain;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Architectural elevations</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden; background:#fff;"><img src="uploads/12-drawing-steel-stair-shop.png" alt="Steel stair shop drawing" style="width:100%;height:100%;object-fit:contain;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Steel stair — structural shop drawing</figcaption></figure>
@@ -100,9 +135,14 @@
   </section>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: clamp(20px,3vw,32px) clamp(20px,5vw,64px);">
-    <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0 0 6px;">Concept Studies &amp; Renders</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700,#5c554e); margin: 0 0 22px;">Sketches, massing models, and architectural visualizations</p>
-    <div style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
+    <div class="slide-head">
+      <div class="slide-num">06</div>
+      <div>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.6vw,40px); margin: 0 0 8px; line-height: 1.05;">Concept Studies &amp; Renders</h2>
+        <p style="font-size: clamp(14.5px,1.5vw,17px); color: var(--color-neutral-700,#5c554e); line-height: 1.55; max-width: 62ch; margin: 0;">Sketches, massing models, and architectural visualizations exploring form, light, and material across residential and hospitality concepts.</p>
+      </div>
+    </div>
+    <div class="gal-grid" style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.49.28%20PM.jpeg" alt="Courtyard house concept sketch" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Courtyard house — concept sketch</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.49.29%20PM.jpeg" alt="Circular lake house render" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Circular lake house — render</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.49.29%20PM%20%281%29.jpeg" alt="Lake pavilion aerial concept" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Lake pavilion — aerial concept</figcaption></figure>
@@ -121,9 +161,14 @@
   </section>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: clamp(20px,3vw,32px) clamp(20px,5vw,64px);">
-    <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0 0 6px;">Urban Visualization Studies</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700,#5c554e); margin: 0 0 22px;">City-scale massing, segmentation passes, and lighting renders</p>
-    <div style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
+    <div class="slide-head">
+      <div class="slide-num">07</div>
+      <div>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.6vw,40px); margin: 0 0 8px; line-height: 1.05;">Urban Visualization Studies</h2>
+        <p style="font-size: clamp(14.5px,1.5vw,17px); color: var(--color-neutral-700,#5c554e); line-height: 1.55; max-width: 62ch; margin: 0;">City-scale massing, segmentation passes, and lighting renders that test how buildings meet the street across day and night.</p>
+      </div>
+    </div>
+    <div class="gal-grid" style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:16/9; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.49.29%20PM%20%288%29.jpeg" alt="City street massing, clay render" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">City street — massing (clay)</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:16/9; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.49.30%20PM%20%281%29.jpeg" alt="City street segmentation pass" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">City street — segmentation pass</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:16/9; overflow:hidden; background:#111;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.49.30%20PM%20%282%29.jpeg" alt="City street night render" style="width:100%;height:100%;object-fit:cover;display:block;"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">City street — night render</figcaption></figure>
@@ -132,9 +177,14 @@
   </section>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: clamp(20px,3vw,32px) clamp(20px,5vw,64px);">
-    <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0 0 6px;">Construction &amp; Infrastructure</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700,#5c554e); margin: 0 0 22px;">Box culverts, foundations, earthworks and survey control on active sites</p>
-    <div style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
+    <div class="slide-head">
+      <div class="slide-num">08</div>
+      <div>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.6vw,40px); margin: 0 0 8px; line-height: 1.05;">Construction &amp; Infrastructure</h2>
+        <p style="font-size: clamp(14.5px,1.5vw,17px); color: var(--color-neutral-700,#5c554e); line-height: 1.55; max-width: 62ch; margin: 0;">Box culverts, bridge abutments, foundations, earthworks, and survey control on active civil sites — engineering and fieldwork moving together.</p>
+      </div>
+    </div>
+    <div class="gal-grid" style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-15%20at%202.05.29%20PM%20%281%29.jpeg" alt="Box culvert compaction and backfill" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Box culvert — compaction &amp; backfill</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-15%20at%202.05.29%20PM%20%282%29.jpeg" alt="Bridge abutment cast concrete and rebar" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Bridge abutment — concrete &amp; rebar</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-15%20at%202.05.29%20PM.jpeg" alt="Drainage structure earthworks and compaction" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Drainage structure — earthworks</figcaption></figure>
@@ -150,9 +200,14 @@
   </section>
 
   <section style="max-width: 1180px; margin: 0 auto; padding: clamp(20px,3vw,32px) clamp(20px,5vw,64px) clamp(44px,6vw,72px);">
-    <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0 0 6px;">United States</h2>
-    <p style="font-size: 14px; color: var(--color-neutral-700,#5c554e); margin: 0 0 22px;">Structural steel, event structures &amp; civil work</p>
-    <div style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
+    <div class="slide-head">
+      <div class="slide-num">09</div>
+      <div>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.6vw,40px); margin: 0 0 8px; line-height: 1.05;">United States</h2>
+        <p style="font-size: clamp(14.5px,1.5vw,17px); color: var(--color-neutral-700,#5c554e); line-height: 1.55; max-width: 62ch; margin: 0;">Structural steel erection and large-scale event structures in the United States, supporting project management and precise field coordination.</p>
+      </div>
+    </div>
+    <div class="gal-grid" style="display: grid; grid-template-columns: var(--g-cols); gap: 16px;">
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%288%29.jpeg" alt="Large LED stage structure" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Large-scale event stage structure</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%289%29.jpeg" alt="LED stage structure, angled view" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Stage build — structural assembly</figcaption></figure>
       <figure style="background:#fff; border:1px solid var(--color-neutral-300,#d9cdba); border-radius: var(--radius-lg,20px); overflow:hidden; box-shadow: var(--shadow-sm);"><div style="aspect-ratio:4/3; overflow:hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%287%29.jpeg" alt="Event stage build with boom lift" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95);"></div><figcaption style="padding:12px 16px 16px; font-size:13.5px; color:var(--color-neutral-700,#5c554e);">Rigging &amp; access with a boom lift</figcaption></figure>
@@ -194,6 +249,15 @@ class Component extends DCLogic {
       "Urban Visualization Studies":"Estudios de visualización urbana","City-scale massing, segmentation passes, and lighting renders":"Volumetría a escala urbana, pases de segmentación y renders de iluminación",
       "Construction & Infrastructure":"Construcción e infraestructura","Box culverts, foundations, earthworks and survey control on active sites":"Cajas de paso, fundaciones, movimientos de tierra y control topográfico en obras activas",
       "United States":"Estados Unidos","Structural steel, event structures & civil work":"Acero estructural, estructuras de eventos y obra civil",
+      "Establishing precise control points, elevation and contour data, and as-built records — the georeferenced foundation every design and permit is built on. Captured with GNSS receivers and total stations across Nicaragua.":"Estableciendo puntos de control precisos, datos de elevación y curvas de nivel, y registros de estado actual — la base georreferenciada sobre la que se diseña y se tramita. Capturado con receptores GNSS y estaciones totales en toda Nicaragua.",
+      "Heavy steel columns fabricated in the yard, warehouse frames erected in the field, and geotechnical soil borings that confirm what the ground can carry — with topographic control keeping every axis and level true.":"Columnas de acero pesadas fabricadas en el taller, marcos de naves montados en campo y sondeos geotécnicos que confirman la capacidad del terreno — con control topográfico que mantiene cada eje y nivel exacto.",
+      "Where survey data becomes design: analysis of contours, sun paths, and views feeds BIM models and the documentation carried through to institutional projects.":"Donde los datos de topografía se vuelven diseño: el análisis de curvas de nivel, trayectoria solar y vistas alimenta los modelos BIM y la documentación que llega hasta los proyectos institucionales.",
+      "Concept renders and interiors modeled and rendered in-house in Revit, V-Ray, Lumion, D5, and Enscape — so clients experience a space before a single wall is built.":"Renders conceptuales e interiores modelados y renderizados internamente en Revit, V-Ray, Lumion, D5 y Enscape — para que el cliente viva el espacio antes de levantar un solo muro.",
+      "Architectural and structural drawings — plans, elevations, and shop details — coordinated and issued for construction.":"Planos arquitectónicos y estructurales — plantas, elevaciones y detalles de taller — coordinados y emitidos para construcción.",
+      "Sketches, massing models, and architectural visualizations exploring form, light, and material across residential and hospitality concepts.":"Bocetos, modelos de masa y visualizaciones arquitectónicas que exploran forma, luz y material en conceptos residenciales y de hospitalidad.",
+      "City-scale massing, segmentation passes, and lighting renders that test how buildings meet the street across day and night.":"Volumetría a escala urbana, pases de segmentación y renders de iluminación que prueban cómo los edificios se encuentran con la calle de día y de noche.",
+      "Box culverts, bridge abutments, foundations, earthworks, and survey control on active civil sites — engineering and fieldwork moving together.":"Cajas de paso, estribos de puente, fundaciones, movimientos de tierra y control topográfico en obras civiles activas — ingeniería y trabajo de campo en conjunto.",
+      "Structural steel erection and large-scale event structures in the United States, supporting project management and precise field coordination.":"Montaje de acero estructural y estructuras de eventos a gran escala en Estados Unidos, apoyando la gestión de proyecto y la coordinación precisa en campo.",
       "GNSS georeferencing — establishing control points":"Georreferenciación GNSS — estableciendo puntos de control","Field georeferencing on an open lot":"Georreferenciación en campo en un lote abierto","As-built survey of an existing structure":"Levantamiento de estado actual de una estructura existente","Total station survey at a fabrication yard":"Levantamiento con estación total en un taller","Setting out — marking foundation lines":"Replanteo — marcando líneas de fundación","Field access & mobilization":"Acceso y movilización en campo",
       "Industrial warehouse — steel frame erection":"Nave industrial — montaje de estructura de acero","Heavy steel columns in fabrication":"Columnas de acero pesadas en fabricación","Steel ceiling framing — interior remodel":"Estructura de techo en acero — remodelación interior","Geotechnical soil boring":"Sondeo geotécnico de suelos",
       "Site analysis — contours, sun paths & views":"Análisis de sitio — curvas de nivel, trayectoria solar y vistas","3D modeling & photoreal rendering":"Modelado 3D y renderizado fotorrealista","Reviewing site plans on a hospital project":"Revisando planos de sitio en un proyecto hospitalario","Institutional campus survey":"Levantamiento de campus institucional",

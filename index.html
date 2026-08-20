@@ -55,6 +55,7 @@
     .btn-resume { padding: 9px 14px !important; font-size: 13px !important; }
   }
   @media (max-width: 480px) { .cards { grid-template-columns: 1fr; } .field-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) { [data-cv-panel] { grid-template-columns: 1fr !important; } }
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="--accent:#c0381c; --accent-2:#2c6e49; --accent-deep:#8f2a12; --pf-cols:repeat(3,minmax(0,1fr)); font-family: var(--font-body,'Figtree',sans-serif); color: var(--tinta); background: var(--arena); overflow-x: hidden;">
@@ -67,6 +68,7 @@
       <a class="navlink" href="#thesis">Thesis</a>
       <a class="navlink" href="#experience">Experience</a>
       <a class="navlink" href="gallery.html">Gallery</a>
+      <a class="navlink" href="#cv">Résumé</a>
       <a class="navlink" href="#contact">Contact</a>
     </div>
     <div style="display: flex; align-items: center; gap: 10px;">
@@ -356,6 +358,16 @@
           <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--rosa); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>AXP Supervisor / Architect</strong> — NCARB · 2025</span></li>
           <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--verde); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Autodesk Certified Professional</strong> — AutoCAD, Revit, Civil 3D · 2025</span></li>
         </ul>
+
+        <div style="margin-top: 28px;">
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 12px;">Verified documents</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="uploads/NCARB_AXP_Supervisor_Certificate.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--sand); border-left: 5px solid var(--terracota); border-radius: 14px; padding: 13px 16px; text-decoration: none; color: var(--tinta); box-shadow: var(--shadow-sm);" style-hover="border-color: var(--terracota);"><span style="flex: none; width: 34px; height: 34px; border-radius: 999px; background: color-mix(in srgb, var(--terracota) 14%, #fff); display: grid; place-items: center; font-size: 16px;">📄</span><span style="flex: 1;"><span style="display: block; font-weight: 700; font-size: 14.5px;">NCARB — AXP Supervisor Training</span><span style="display: block; font-size: 12.5px; color: var(--soft); margin-top: 1px;">Certificate of Completion · 2025</span></span><span style="flex: none; color: var(--indigo); font-weight: 700; font-size: 14px;">↗</span></a>
+            <a href="uploads/NCARB_Continuum_Transcript_2025.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--sand); border-left: 5px solid var(--terracota); border-radius: 14px; padding: 13px 16px; text-decoration: none; color: var(--tinta); box-shadow: var(--shadow-sm);" style-hover="border-color: var(--terracota);"><span style="flex: none; width: 34px; height: 34px; border-radius: 999px; background: color-mix(in srgb, var(--terracota) 14%, #fff); display: grid; place-items: center; font-size: 16px;">📄</span><span style="flex: 1;"><span style="display: block; font-weight: 700; font-size: 14.5px;">NCARB — Continuum Education</span><span style="display: block; font-size: 12.5px; color: var(--soft); margin-top: 1px;">Continuing-education transcript · 2025</span></span><span style="flex: none; color: var(--indigo); font-weight: 700; font-size: 14px;">↗</span></a>
+            <a href="uploads/ACI_Constructability_Certificate.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--sand); border-left: 5px solid var(--terracota); border-radius: 14px; padding: 13px 16px; text-decoration: none; color: var(--tinta); box-shadow: var(--shadow-sm);" style-hover="border-color: var(--terracota);"><span style="flex: none; width: 34px; height: 34px; border-radius: 999px; background: color-mix(in srgb, var(--terracota) 14%, #fff); display: grid; place-items: center; font-size: 16px;">📄</span><span style="flex: 1;"><span style="display: block; font-weight: 700; font-size: 14.5px;">ACI University — Constructability Series</span><span style="display: block; font-size: 12.5px; color: var(--soft); margin-top: 1px;">Certificate of Completion · 2025</span></span><span style="flex: none; color: var(--indigo); font-weight: 700; font-size: 14px;">↗</span></a>
+            <a href="uploads/UNI_Historial_Academico.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--sand); border-left: 5px solid var(--indigo); border-radius: 14px; padding: 13px 16px; text-decoration: none; color: var(--tinta); box-shadow: var(--shadow-sm);" style-hover="border-color: var(--indigo);"><span style="flex: none; width: 34px; height: 34px; border-radius: 999px; background: color-mix(in srgb, var(--indigo) 14%, #fff); display: grid; place-items: center; font-size: 16px;">🎓</span><span style="flex: 1;"><span style="display: block; font-weight: 700; font-size: 14.5px;">Universidad Nacional de Ingeniería (UNI)</span><span style="display: block; font-size: 12.5px; color: var(--soft); margin-top: 1px;">Official academic transcript · Civil Engineering</span></span><span style="flex: none; color: var(--indigo); font-weight: 700; font-size: 14px;">↗</span></a>
+          </div>
+        </div>
       </div>
       <div>
         <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--terracota);">Toolkit</span>
@@ -366,6 +378,58 @@
           <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Project &amp; Business Systems</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Procore</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Jira / Atlassian</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Salesforce</span></div></div>
           <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">BIM Methodology</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">ISO 19650</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Model coordination</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Deliverable QA</span></div></div>
           <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Education</div><p style="font-size: 14px; line-height: 1.5; margin: 0; color: var(--soft);"><strong>B.Sc. Civil Engineering</strong>, UNI Nicaragua (2019–2024) · <strong>Minor in Architecture</strong>, UNI–ANIA (2024)</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv" style="background: linear-gradient(180deg,#efe2c8 0%,var(--arena) 100%); border-top: 1px solid var(--sand);">
+    <div class="wrap" style="padding-top: clamp(44px,6vw,72px); padding-bottom: clamp(44px,6vw,72px);">
+      <div style="max-width: 62ch;">
+        <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--terracota);">Résumé by country</span>
+        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(28px,3.6vw,44px); margin: 10px 0 0; line-height: 1.08; text-wrap: balance;">One profile, tuned to four markets.</h2>
+        <p style="font-size: 16px; line-height: 1.6; color: var(--soft); margin: 16px 0 0;">Same experience, education, and certifications — only the focus and work-authorization notes change. Pick a region to see the emphasis and download the matching CV.</p>
+      </div>
+
+      <div role="tablist" aria-label="Résumé by country" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;">
+        <button data-cv-tab="mx" role="tab" onClick="{{ selMx }}" style="display: flex; align-items: center; gap: 9px; font-family: var(--font-body,'Figtree',sans-serif); font-size: 15px; font-weight: 700; color: var(--tinta); background: #fff; border: 1px solid var(--sand); padding: 11px 20px; border-radius: 999px; cursor: pointer;"><span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; opacity: .55;">MX</span>Mexico</button>
+        <button data-cv-tab="cr" role="tab" onClick="{{ selCr }}" style="display: flex; align-items: center; gap: 9px; font-family: var(--font-body,'Figtree',sans-serif); font-size: 15px; font-weight: 700; color: var(--tinta); background: #fff; border: 1px solid var(--sand); padding: 11px 20px; border-radius: 999px; cursor: pointer;"><span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; opacity: .55;">CR</span>Costa Rica</button>
+        <button data-cv-tab="ni" role="tab" onClick="{{ selNi }}" style="display: flex; align-items: center; gap: 9px; font-family: var(--font-body,'Figtree',sans-serif); font-size: 15px; font-weight: 700; color: var(--tinta); background: #fff; border: 1px solid var(--sand); padding: 11px 20px; border-radius: 999px; cursor: pointer;"><span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; opacity: .55;">NI</span>Nicaragua</button>
+        <button data-cv-tab="es" role="tab" onClick="{{ selEs }}" style="display: flex; align-items: center; gap: 9px; font-family: var(--font-body,'Figtree',sans-serif); font-size: 15px; font-weight: 700; color: var(--tinta); background: #fff; border: 1px solid var(--sand); padding: 11px 20px; border-radius: 999px; cursor: pointer;"><span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; opacity: .55;">ES</span>Spain</button>
+      </div>
+
+      <div style="margin-top: 22px;">
+        <div data-cv-panel="mx" role="tabpanel" style="background: #fff; border-radius: var(--radius-lg,20px); border-left: 6px solid var(--indigo); box-shadow: var(--shadow-md); padding: clamp(24px,3vw,40px); display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;"><h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0; line-height: 1;">Mexico</h3><span style="font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--soft); text-transform: uppercase;">CV · México</span></div>
+            <div style="margin-top: 20px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--terracota); margin-bottom: 6px;">Focus</div><p style="font-size: 17px; font-weight: 700; line-height: 1.4; margin: 0; color: var(--tinta);">Project Management · BIM · Preconstruction</p></div>
+            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 6px;">Availability</div><p style="font-size: 15px; line-height: 1.6; margin: 0; color: var(--soft);">Immediate start in Mexico. Hiring of specialized managerial and technical staff is exempt from Art. 7 of the LFT; temporary residence by job offer before the INM.</p></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_MX.pdf" download target="_blank" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--terracota); padding: 13px 24px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--soft); word-break: break-all;">CV_Orelio_Martinez_MX.pdf</span></div>
+        </div>
+        <div data-cv-panel="cr" role="tabpanel" style="background: #fff; border-radius: var(--radius-lg,20px); border-left: 6px solid var(--indigo); box-shadow: var(--shadow-md); padding: clamp(24px,3vw,40px); display: none; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;"><h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0; line-height: 1;">Costa Rica</h3><span style="font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--soft); text-transform: uppercase;">CV · Costa Rica</span></div>
+            <div style="margin-top: 20px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--terracota); margin-bottom: 6px;">Focus</div><p style="font-size: 17px; font-weight: 700; line-height: 1.4; margin: 0; color: var(--tinta);">BIM · Production &amp; Estimation for International Projects</p></div>
+            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 6px;">Availability</div><p style="font-size: 15px; line-height: 1.6; margin: 0; color: var(--soft);">U.S. citizen, with an expedited process before the DGME. Oriented to service and technical-production centers serving international clients — no CFIA membership required.</p></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_CR.pdf" download target="_blank" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--terracota); padding: 13px 24px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--soft); word-break: break-all;">CV_Orelio_Martinez_CR.pdf</span></div>
+        </div>
+        <div data-cv-panel="ni" role="tabpanel" style="background: #fff; border-radius: var(--radius-lg,20px); border-left: 6px solid var(--indigo); box-shadow: var(--shadow-md); padding: clamp(24px,3vw,40px); display: none; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;"><h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0; line-height: 1;">Nicaragua</h3><span style="font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--soft); text-transform: uppercase;">CV · Nicaragua</span></div>
+            <div style="margin-top: 20px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--terracota); margin-bottom: 6px;">Focus</div><p style="font-size: 17px; font-weight: 700; line-height: 1.4; margin: 0; color: var(--tinta);">Architecture Concentration · Design &amp; Project Direction</p></div>
+            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 6px;">Availability</div><p style="font-size: 15px; line-height: 1.6; margin: 0; color: var(--soft);">Originally from Nicaragua. Available for projects and collaborations, remote or on-site.</p></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_NI.pdf" download target="_blank" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--terracota); padding: 13px 24px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--soft); word-break: break-all;">CV_Orelio_Martinez_NI.pdf</span></div>
+        </div>
+        <div data-cv-panel="es" role="tabpanel" style="background: #fff; border-radius: var(--radius-lg,20px); border-left: 6px solid var(--indigo); box-shadow: var(--shadow-md); padding: clamp(24px,3vw,40px); display: none; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;"><h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0; line-height: 1;">Spain</h3><span style="font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--soft); text-transform: uppercase;">CV · España</span></div>
+            <div style="margin-top: 20px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--terracota); margin-bottom: 6px;">Focus</div><p style="font-size: 17px; font-weight: 700; line-height: 1.4; margin: 0; color: var(--tinta);">BIM · Project &amp; Budget Management</p></div>
+            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 6px;">Availability</div><p style="font-size: 15px; line-height: 1.6; margin: 0; color: var(--soft);">Immediate start in Spain via the Highly Qualified Professional route (Ley 14/2013, UGE-CE) or the general employed-worker regime. Degree homologation in process.</p></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_ES-4099580c.pdf" download target="_blank" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--terracota); padding: 13px 24px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--soft); word-break: break-all;">CV_Orelio_Martinez_ES.pdf</span></div>
         </div>
       </div>
     </div>
@@ -385,7 +449,7 @@
       <p style="font-size: 15px; color: var(--amarillo); margin: 20px 0 0;">Chicago, Illinois · U.S. Citizen · Bilingual EN/ES</p>
       <div style="margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(243,217,201,.3); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #f0cba6;">
         <span>© 2026 Orelio Marcelo Martínez</span>
-        <span style="display: flex; gap: 18px; flex-wrap: wrap;"><a href="uploads/Orelio_Martinez_Resume_US.pdf" data-resume target="_blank" style="color: var(--amarillo); text-decoration: underline;">Résumé (EN, PDF)</a><a href="uploads/CV_Orelio_Martinez_ES.pdf" target="_blank" style="color: var(--amarillo); text-decoration: underline;">CV (ES, PDF)</a></span>
+        <span style="display: flex; gap: 18px; flex-wrap: wrap;"><a href="uploads/Orelio_Martinez_Resume_US-adfaa9db.pdf" data-resume target="_blank" style="color: var(--amarillo); text-decoration: underline;">Résumé (EN, PDF)</a><a href="uploads/CV_Orelio_Martinez_ES-4099580c.pdf" target="_blank" style="color: var(--amarillo); text-decoration: underline;">CV (ES, PDF)</a></span>
       </div>
     </div>
   </footer>
@@ -399,8 +463,20 @@
   &quot;showPortrait&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot; }
 }">
 class Component extends DCLogic {
-  componentDidMount() { this.applyTweaks(); this._lang = this._lang || 'en'; this.translate(this._lang); }
-  componentDidUpdate() { this.applyTweaks(); this.translate(this._lang || 'en'); }
+  componentDidMount() { this.applyTweaks(); this._lang = this._lang || 'en'; this.translate(this._lang); this.selectCountry(this._country || 'mx'); }
+  componentDidUpdate() { this.applyTweaks(); this.translate(this._lang || 'en'); this.selectCountry(this._country || 'mx'); }
+  selectCountry(code) {
+    this._country = code;
+    if (!this.rootRef) return;
+    this.rootRef.querySelectorAll('[data-cv-panel]').forEach(p => { p.style.display = (p.getAttribute('data-cv-panel') === code) ? 'grid' : 'none'; });
+    this.rootRef.querySelectorAll('[data-cv-tab]').forEach(b => {
+      const on = b.getAttribute('data-cv-tab') === code;
+      b.style.background = on ? 'var(--indigo)' : '#fff';
+      b.style.color = on ? '#fff' : 'var(--tinta)';
+      b.style.borderColor = on ? 'var(--indigo)' : 'var(--sand)';
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
   toggleLang() {
     this._lang = (this._lang === 'es') ? 'en' : 'es';
     this.translate(this._lang);
@@ -471,7 +547,23 @@ class Component extends DCLogic {
       "Supported project-management teams on active commercial construction projects — assisting with submittals, RFIs, cost tracking, schedule updates, and subcontractor coordination while learning DPR's self-perform and lean-construction practices.":"Apoyé a los equipos de gestión de proyecto en obras comerciales activas — asistiendo con submittals, RFIs, control de costos, actualización de cronogramas y coordinación de subcontratistas, mientras aprendía las prácticas de autoejecución y construcción lean de DPR.",
       "Supervised and mentored emerging architects and engineers on projects advancing national infrastructure and urban development, reviewing drawings for code compliance, feasibility, and design quality.":"Supervisé y orienté a arquitectos e ingenieros emergentes en proyectos que impulsan la infraestructura nacional y el desarrollo urbano, revisando planos por cumplimiento de códigos, factibilidad y calidad de diseño.",
       "Associate Architect":"Arquitecto Asociado","Certified Member":"Miembro Certificado","NCEES Certified":"Certificado NCEES","AXP Supervisor / Architect":"Supervisor AXP / Arquitecto",
-      "B.Sc. Civil Engineering":"Lic. en Ingeniería Civil","Minor in Architecture":"Minor en Arquitectura"
+      "B.Sc. Civil Engineering":"Lic. en Ingeniería Civil","Minor in Architecture":"Minor en Arquitectura",
+      "Résumé":"CV","Résumé by country":"CV por país","One profile, tuned to four markets.":"Un solo perfil, ajustado a cuatro mercados.",
+      "Same experience, education, and certifications — only the focus and work-authorization notes change. Pick a region to see the emphasis and download the matching CV.":"La misma experiencia, formación y certificaciones — solo cambian el enfoque y las notas de autorización de trabajo. Elige una región para ver el énfasis y descargar el CV correspondiente.",
+      "Mexico":"México","Spain":"España","Focus":"Enfoque","Availability":"Disponibilidad","Download CV":"Descargar CV",
+      "Verified documents":"Documentos verificados",
+      "NCARB — AXP Supervisor Training":"NCARB — Formación de Supervisor AXP",
+      "ACI University — Constructability Series":"ACI University — Serie de Constructabilidad",
+      "Certificate of Completion · 2025":"Certificado de finalización · 2025","Continuing-education transcript · 2025":"Historial de formación continua · 2025",
+      "Official academic transcript · Civil Engineering":"Historial académico oficial · Ingeniería Civil",
+      "Project Management · BIM · Preconstruction":"Gerencia de Proyectos · BIM · Preconstrucción",
+      "BIM · Production & Estimation for International Projects":"BIM · Producción y Estimación para Proyectos Internacionales",
+      "Architecture Concentration · Design & Project Direction":"Especialización en Arquitectura · Diseño y Dirección de Proyectos",
+      "BIM · Project & Budget Management":"BIM · Gestión de Proyectos y Presupuestos",
+      "Immediate start in Mexico. Hiring of specialized managerial and technical staff is exempt from Art. 7 of the LFT; temporary residence by job offer before the INM.":"Incorporación inmediata en México. La contratación de personal directivo y técnico especializado está exenta del Art. 7 de la LFT; residencia temporal por oferta de empleo ante el INM.",
+      "U.S. citizen, with an expedited process before the DGME. Oriented to service and technical-production centers serving international clients — no CFIA membership required.":"Ciudadano estadounidense, con trámite ágil ante la DGME. Orientado a centros de servicios y producción técnica para clientes internacionales, sin requerir incorporación al CFIA.",
+      "Originally from Nicaragua. Available for projects and collaborations, remote or on-site.":"Originario de Nicaragua. Disponible para proyectos y colaboraciones, de forma remota o presencial.",
+      "Immediate start in Spain via the Highly Qualified Professional route (Ley 14/2013, UGE-CE) or the general employed-worker regime. Degree homologation in process.":"Incorporación inmediata en España vía Profesional Altamente Cualificado (Ley 14/2013, UGE-CE) o régimen general por cuenta ajena. Homologación de títulos en trámite."
     };
   }
   snapshot() {
@@ -483,7 +575,7 @@ class Component extends DCLogic {
   }
   translate(lang) {
     this.snapshot();
-    if (this.rootRef) { const rp = lang === 'es' ? 'uploads/CV_Orelio_Martinez_ES.pdf' : 'uploads/Orelio_Martinez_Resume_US.pdf'; this.rootRef.querySelectorAll('[data-resume]').forEach(a => a.setAttribute('href', rp)); }
+    if (this.rootRef) { const rp = lang === 'es' ? 'uploads/CV_Orelio_Martinez_ES-4099580c.pdf' : 'uploads/Orelio_Martinez_Resume_US-adfaa9db.pdf'; this.rootRef.querySelectorAll('[data-resume]').forEach(a => a.setAttribute('href', rp)); }
     if (!this._nodes) return;
     const d = this.dict();
     for (const n of this._nodes) { const en = n.__en; const key = en.trim(); if (lang === 'es' && d[key]) { const lead = en.slice(0, en.length - en.trimStart().length); const trail = en.slice(en.trimEnd().length); n.nodeValue = lead + d[key] + trail; } else { n.nodeValue = en; } }
@@ -501,7 +593,11 @@ class Component extends DCLogic {
       toggleLang: () => this.toggleLang(),
       langBtnRef: (el) => { this._langBtn = el; },
       showPortrait: this.props.showPortrait ?? true,
-      resumeUrl: 'uploads/Orelio_Martinez_Resume_US.pdf'
+      resumeUrl: 'uploads/Orelio_Martinez_Resume_US-adfaa9db.pdf',
+      selMx: () => this.selectCountry('mx'),
+      selCr: () => this.selectCountry('cr'),
+      selNi: () => this.selectCountry('ni'),
+      selEs: () => this.selectCountry('es')
     };
   }
 }

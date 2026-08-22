@@ -7,458 +7,452 @@
 </head>
 <body>
 <x-dc>
+
 <helmet>
+<link rel="stylesheet" href="_ds/modernist-0c168e49-afcf-476b-9718-d0d21cbfd4ac/styles.css">
+<script src="_ds/modernist-0c168e49-afcf-476b-9718-d0d21cbfd4ac/_ds_bundle.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="_ds/organic-3fcb45e8-9eb7-4a29-a054-bcd177585f43/styles.css">
-<script src="_ds/organic-3fcb45e8-9eb7-4a29-a054-bcd177585f43/_ds_bundle.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 <style>
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: #f2e7d3; }
-  :root { --arena:#f2e7d3; --tinta:#1a1a1a; --soft:#2b2b2b; --sand:#e6d6b8; --rosa:#e0197f; --amarillo:#f4b400; --verde:#2c6e49; --terracota:#c0381c; --indigo:#15369e; }
-  a { color: var(--indigo); }
-  a:hover { color: #0f2570; }
+  body { margin: 0; }
+  @keyframes nm-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   * { box-sizing: border-box; }
-  @keyframes floatUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-  .wrap { max-width: 1180px; margin: 0 auto; padding-left: clamp(18px,5vw,64px); padding-right: clamp(18px,5vw,64px); }
-  .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px,5vw,64px); align-items: center; }
-  .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-  .pf-grid { display: grid; grid-template-columns: var(--pf-cols,repeat(3,1fr)); gap: 18px; }
-  .field-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+  a:hover { color: var(--color-accent-700); }
+  .wrap { max-width: 1200px; margin: 0 auto; padding-left: clamp(20px,5vw,64px); padding-right: clamp(20px,5vw,64px); }
+  .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px,5vw,64px); align-items: center; }
+  .stat-grid { display: grid; grid-template-columns: repeat(3,auto); gap: clamp(28px,6vw,72px); }
+  .work-grid { display: grid; grid-template-columns: repeat(var(--pf-cols,3),1fr); gap: 2px; background: var(--color-divider); }
+  .thumb-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(140px,1fr)); gap: 2px; background: var(--color-divider); }
+  .add-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--color-divider); }
   .exp-row { display: grid; grid-template-columns: 200px 1fr; gap: clamp(14px,3vw,36px); }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px,5vw,56px); }
-  .dims { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-  .sarape { display: flex; height: 12px; width: 100%; }
-  .sarape > span { flex: 1; }
   .nav-links { display: flex; align-items: center; gap: clamp(10px,2vw,26px); }
-  .navlink { font-size: 14.5px; font-weight: 600; color: var(--soft); text-decoration: none; white-space: nowrap; }
-  .navlink:hover { color: var(--terracota); }
-  .add-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-  @media (max-width: 940px) { .cards { grid-template-columns: repeat(2,1fr); } }
+  .nav-links a { white-space: nowrap; }
+  @media (max-width: 940px) { .work-grid { grid-template-columns: repeat(2,1fr) !important; } }
   @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; }
+    .hero-grid { grid-template-columns: 1fr; }
     .two-col { grid-template-columns: 1fr; }
-    .dims { grid-template-columns: repeat(2,1fr); }
     .add-grid { grid-template-columns: 1fr; }
-    .portrait { max-width: 340px; margin: 0 auto; }
     .nav-links { display: none; }
   }
   @media (max-width: 760px) {
-    .pf-grid { grid-template-columns: 1fr !important; }
-    .field-grid { grid-template-columns: repeat(2,1fr); }
-    .exp-row { grid-template-columns: 1fr; gap: 4px; padding: 18px 0 !important; }
+    .work-grid { grid-template-columns: 1fr !important; }
+    .exp-row { grid-template-columns: 1fr; gap: 4px; }
+    [data-cv-panel] { grid-template-columns: 1fr !important; }
   }
-  @media (max-width: 560px) {
-    nav { padding-left: 16px !important; padding-right: 16px !important; }
-    .navbrand { font-size: 17px !important; }
-    .btn-resume { padding: 9px 14px !important; font-size: 13px !important; }
-  }
-  @media (max-width: 480px) { .cards { grid-template-columns: 1fr; } .field-grid { grid-template-columns: 1fr; } }
-  @media (max-width: 760px) { [data-cv-panel] { grid-template-columns: 1fr !important; } }
 </style>
 </helmet>
-<div ref="{{ rootRef }}" style="--accent:#c0381c; --accent-2:#2c6e49; --accent-deep:#8f2a12; --pf-cols:repeat(3,minmax(0,1fr)); font-family: var(--font-body,'Figtree',sans-serif); color: var(--tinta); background: var(--arena); overflow-x: hidden;">
+<div ref="{{ rootRef }}" style="--pf-cols:3; font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); overflow-x: hidden;">
 
-  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 13px clamp(18px,5vw,64px); background: color-mix(in srgb, var(--arena) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--sand);">
-    <a href="#top" class="navbrand" style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; color: var(--indigo); text-decoration: none; letter-spacing: .01em;">Orelio Martínez</a>
+  <nav class="nav" style="position: sticky; top: 0; z-index: 50; background: var(--color-bg);">
+    <a href="#top" class="nav-brand" style="text-decoration: none; color: var(--color-text);">Orelio Martínez</a>
     <div class="nav-links">
-      <a class="navlink" href="#work">Work</a>
-      <a class="navlink" href="#services">Services</a>
-      <a class="navlink" href="#thesis">Thesis</a>
-      <a class="navlink" href="#experience">Experience</a>
-      <a class="navlink" href="gallery.html">Gallery</a>
-      <a class="navlink" href="#cv">Résumé</a>
-      <a class="navlink" href="#contact">Contact</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#thesis">Thesis</a>
+      <a href="#experience">Experience</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#cv">Résumé</a>
+      <a href="#contact">Contact</a>
     </div>
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <button onClick="{{ toggleLang }}" ref="{{ langBtnRef }}" style="font-size: 13px; font-weight: 800; letter-spacing: .04em; color: #fff; background: var(--indigo); border: none; padding: 9px 15px; border-radius: 999px; cursor: pointer;" style-hover="background: #0f2570;">ES</button>
-      <a href="{{ resumeUrl }}" data-resume target="_blank" class="btn-resume" style="font-size: 14px; font-weight: 700; color: #fff; background: var(--terracota); padding: 10px 18px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download Résumé</a>
-    </div>
+    <button onClick="{{ toggleLang }}" ref="{{ langBtnRef }}" type="button" class="btn btn-secondary">ES</button>
+    <a href="{{ resumeUrl }}" data-resume target="_blank" class="btn btn-primary">Download Résumé</a>
   </nav>
 
-  <div class="sarape"><span style="background:var(--rosa)"></span><span style="background:var(--amarillo)"></span><span style="background:var(--verde)"></span><span style="background:var(--terracota)"></span><span style="background:var(--indigo)"></span></div>
-
-  <header id="top" class="wrap" style="padding-top: clamp(40px,7vw,88px); padding-bottom: clamp(36px,5vw,64px);">
-    <div class="hero">
-      <div style="animation: floatUp .7s ease both;">
-        <span style="display: inline-block; background: var(--indigo); color: #fff; font-weight: 700; font-size: 12.5px; letter-spacing: .06em; padding: 7px 15px; border-radius: 999px; text-transform: uppercase;">Chicago, Illinois · Assoc. AIA · NCARB · PMP · Bilingual EN/ES</span>
-        <h1 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(34px,6.5vw,72px); line-height: 1.02; margin: 20px 0 0; letter-spacing: .005em; color: var(--tinta); text-wrap: balance;">Architecture, engineering &amp; the land it stands on.</h1>
-        <p style="font-size: clamp(16px,1.6vw,19px); line-height: 1.6; color: var(--soft); max-width: 50ch; margin: 22px 0 0;">I'm <strong>Orelio Marcelo Martínez</strong> — a Chicago-based civil engineer with an architecture concentration (<strong>Assoc. AIA · NCARB</strong>), co-founder of <strong>Martínez-Segura Multiservicios</strong> and general manager of <strong>Veritas Drafting</strong>. I take building, infrastructure, and energy projects from estimating and survey through BIM, construction, and close-out — across U.S. and Latin American markets.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px;">
-          <a href="#work" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--terracota); padding: 14px 26px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-md);" style-hover="background: var(--accent-deep);">See selected work</a>
-          <a href="#contact" style="font-size: 15px; font-weight: 700; color: var(--indigo); background: transparent; padding: 14px 26px; border-radius: 999px; text-decoration: none; border: 2px solid var(--indigo);" style-hover="background: color-mix(in srgb, var(--indigo) 10%, transparent);">Get in touch</a>
+  <header id="top" class="wrap" style="padding-top: clamp(56px,8vw,96px); padding-bottom: clamp(48px,6vw,72px);">
+    <div class="hero-grid">
+      <div>
+        <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">Chicago, Illinois · Assoc. AIA · NCARB · PMP · Bilingual EN/ES</span>
+        <h1 style="font-size: clamp(38px,6vw,72px); line-height: 1.04; letter-spacing: -0.02em; margin: 0; text-wrap: balance;">Architecture, engineering &amp; the land it stands on.</h1>
+        <p style="font-size: clamp(16px,1.6vw,18px); line-height: 1.6; max-width: 52ch; margin: 24px 0 0;">I'm <strong>Orelio Marcelo Martínez</strong> — a Chicago-based civil engineer with an architecture concentration (<strong>Assoc. AIA · NCARB</strong>), co-founder of <strong>Martínez-Segura Multiservicios</strong> and general manager of <strong>Veritas Drafting</strong>. I take building, infrastructure, and energy projects from estimating and survey through BIM, construction, and close-out — across U.S. and Latin American markets.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;">
+          <a href="#work" class="btn btn-primary">See selected work</a>
+          <a href="#contact" class="btn btn-secondary">Get in touch</a>
         </div>
-        <div style="display: flex; flex-wrap: wrap; gap: clamp(20px,4vw,48px); margin-top: 40px;">
-          <div><div style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 34px; color: var(--terracota); line-height: 1;">6+</div><div style="font-size: 13.5px; color: var(--soft); margin-top: 4px;">Years across AEC</div></div>
-          <div><div style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 34px; color: var(--verde); line-height: 1;">20+</div><div style="font-size: 13.5px; color: var(--soft); margin-top: 4px;">Projects delivered</div></div>
-          <div><div style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 34px; color: var(--rosa); line-height: 1;">6</div><div style="font-size: 13.5px; color: var(--soft); margin-top: 4px;">Pro certifications</div></div>
+        <div class="stat-grid" style="margin-top: 44px; padding-top: 24px; border-top: 2px solid var(--color-divider);">
+          <div><div style="font-family: var(--font-heading); font-weight: 800; font-size: 34px; color: var(--color-accent); line-height: 1;">6+</div><div class="text-muted" style="font-size: 13px; margin-top: 4px;">Years across AEC</div></div>
+          <div><div style="font-family: var(--font-heading); font-weight: 800; font-size: 34px; color: var(--color-accent); line-height: 1;">20+</div><div class="text-muted" style="font-size: 13px; margin-top: 4px;">Projects delivered</div></div>
+          <div><div style="font-family: var(--font-heading); font-weight: 800; font-size: 34px; color: var(--color-accent); line-height: 1;">6</div><div class="text-muted" style="font-size: 13px; margin-top: 4px;">Pro certifications</div></div>
         </div>
       </div>
       <sc-if value="{{ showPortrait }}" hint-placeholder-val="{{ true }}">
-        <div class="portrait" style="position: relative; aspect-ratio: 4/5; width: 100%; border-radius: 40% 40% 42% 42% / 46% 46% 40% 40%; overflow: hidden; box-shadow: var(--shadow-lg); background: #f3d9c9; border: 5px solid var(--amarillo); animation: floatUp .9s ease both;">
+        <figure class="grayscale" style="margin: 0; aspect-ratio: 4/5; border: 2px solid var(--color-divider); overflow: hidden;">
           <img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%282%29.jpeg" alt="Orelio Martínez holding project plans on site" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;">
-        </div>
+        </figure>
       </sc-if>
     </div>
   </header>
 
-  <section id="services" class="wrap" style="padding-top: clamp(32px,5vw,56px); padding-bottom: clamp(32px,5vw,56px);">
-    <div style="max-width: 60ch;">
-      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--terracota);">What I do</span>
-      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(28px,3.6vw,44px); margin: 10px 0 0; line-height: 1.08; text-wrap: balance;">One team, from the ground survey to the final sign-off.</h2>
-    </div>
-    <div class="cards" style="margin-top: 32px;">
-      <div style="background: #fff; border-radius: var(--radius-lg,20px); border-top: 5px solid var(--terracota); padding: 24px; box-shadow: var(--shadow-sm);">
-        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--terracota); display: grid; place-items: center; font-size: 22px;">📐</div>
-        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">Topographic &amp; Cadastral Surveying</h3>
-        <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Georeferenced altimetry with contour lines and site detail. Deslinde, amojonamiento, and plans valid for municipal cadastral filing — with the digital CAD file for design.</p>
+  <hr class="hr" style="margin: 0;">
+
+  <section id="services" class="wrap" style="padding-top: clamp(40px,6vw,64px); padding-bottom: clamp(40px,6vw,64px);">
+    <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 10px;">What I do</span>
+    <h2 style="font-size: clamp(28px,3.4vw,40px); margin: 0; max-width: 44ch; text-wrap: balance;">One team, from the ground survey to the final sign-off.</h2>
+
+    <div style="margin-top: 24px;">
+      <div style="position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 22px 0; border-top: 2px solid var(--color-divider);">
+        <div style="position: relative;"><span style="position: absolute; left: 0; top: 6px; width: 10px; height: 10px; background: var(--color-accent);"></span><span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; margin-left: 20px;">01</span></div>
+        <div><h3 style="font-size: 21px; margin: 0 0 6px;">Topographic &amp; Cadastral Surveying</h3><p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0; max-width: 60ch;">Georeferenced altimetry with contour lines and site detail. Deslinde, amojonamiento, and plans valid for municipal cadastral filing — with the digital CAD file for design.</p></div>
       </div>
-      <div style="background: #fff; border-radius: var(--radius-lg,20px); border-top: 5px solid var(--verde); padding: 24px; box-shadow: var(--shadow-sm);">
-        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--verde); display: grid; place-items: center; font-size: 22px;">🏛️</div>
-        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">Architectural Design &amp; Documentation</h3>
-        <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Concept through construction documents for residential, institutional, and educational clients — managing scope, budget, and schedule end to end.</p>
+      <div style="position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--color-divider);">
+        <div style="position: relative;"><span style="position: absolute; left: 0; top: 6px; width: 10px; height: 10px; background: var(--color-accent);"></span><span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; margin-left: 20px;">02</span></div>
+        <div><h3 style="font-size: 21px; margin: 0 0 6px;">Architectural Design &amp; Documentation</h3><p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0; max-width: 60ch;">Concept through construction documents for residential, institutional, and educational clients — managing scope, budget, and schedule end to end.</p></div>
       </div>
-      <div style="background: #fff; border-radius: var(--radius-lg,20px); border-top: 5px solid var(--rosa); padding: 24px; box-shadow: var(--shadow-sm);">
-        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--rosa); display: grid; place-items: center; font-size: 22px;">🏗️</div>
-        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">Steel Structures &amp; Construction</h3>
-        <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Fabrication and erection of industrial warehouses and steel structures, with site supervision and topographic control of axes and levels.</p>
+      <div style="position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--color-divider);">
+        <div style="position: relative;"><span style="position: absolute; left: 0; top: 6px; width: 10px; height: 10px; background: var(--color-accent);"></span><span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; margin-left: 20px;">03</span></div>
+        <div><h3 style="font-size: 21px; margin: 0 0 6px;">Steel Structures &amp; Construction</h3><p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0; max-width: 60ch;">Fabrication and erection of industrial warehouses and steel structures, with site supervision and topographic control of axes and levels.</p></div>
       </div>
-      <div style="background: #fff; border-radius: var(--radius-lg,20px); border-top: 5px solid var(--indigo); padding: 24px; box-shadow: var(--shadow-sm);">
-        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--indigo); display: grid; place-items: center; font-size: 22px;">🛰️</div>
-        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">GNSS Georeferencing &amp; Layout</h3>
-        <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Georeferenced points with GNSS receivers and total station for setting-out, construction control, and coordinate-accurate plans.</p>
+      <div style="position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--color-divider);">
+        <div style="position: relative;"><span style="position: absolute; left: 0; top: 6px; width: 10px; height: 10px; background: var(--color-accent);"></span><span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; margin-left: 20px;">04</span></div>
+        <div><h3 style="font-size: 21px; margin: 0 0 6px;">GNSS Georeferencing &amp; Layout</h3><p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0; max-width: 60ch;">Georeferenced points with GNSS receivers and total station for setting-out, construction control, and coordinate-accurate plans.</p></div>
       </div>
-      <div style="background: #fff; border-radius: var(--radius-lg,20px); border-top: 5px solid var(--amarillo); padding: 24px; box-shadow: var(--shadow-sm);">
-        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--amarillo); display: grid; place-items: center; font-size: 22px;">🧪</div>
-        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">Geotechnical &amp; Soil Studies</h3>
-        <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Soil boring and geotechnical investigation that define ground conditions and support foundation and structural design.</p>
+      <div style="position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--color-divider);">
+        <div style="position: relative;"><span style="position: absolute; left: 0; top: 6px; width: 10px; height: 10px; background: var(--color-accent);"></span><span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; margin-left: 20px;">05</span></div>
+        <div><h3 style="font-size: 21px; margin: 0 0 6px;">Geotechnical &amp; Soil Studies</h3><p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0; max-width: 60ch;">Soil boring and geotechnical investigation that define ground conditions and support foundation and structural design.</p></div>
       </div>
-      <div style="background: #fff; border-radius: var(--radius-lg,20px); border-top: 5px solid var(--verde); padding: 24px; box-shadow: var(--shadow-sm);">
-        <div style="width: 46px; height: 46px; border-radius: 999px; background: var(--verde); display: grid; place-items: center; font-size: 22px;">🧊</div>
-        <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 21px; margin: 16px 0 8px;">BIM, 3D Modeling &amp; Rendering</h3>
-        <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Revit and Civil 3D models with photoreal rendering in V-Ray, Lumion, D5, and Enscape — so clients see the project before it is built.</p>
+      <div style="position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--color-divider); border-bottom: 2px solid var(--color-divider);">
+        <div style="position: relative;"><span style="position: absolute; left: 0; top: 6px; width: 10px; height: 10px; background: var(--color-accent);"></span><span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; margin-left: 20px;">06</span></div>
+        <div><h3 style="font-size: 21px; margin: 0 0 6px;">BIM, 3D Modeling &amp; Rendering</h3><p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0; max-width: 60ch;">Revit and Civil 3D models with photoreal rendering in V-Ray, Lumion, D5, and Enscape — so clients see the project before it is built.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="work" class="wrap" style="padding-top: clamp(32px,5vw,56px); padding-bottom: clamp(32px,5vw,56px);">
-    <div style="max-width: 58ch;">
-      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--terracota);">Selected work</span>
-      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(28px,3.6vw,44px); margin: 10px 0 0; line-height: 1.08; text-wrap: balance;">Field work and projects across Nicaragua &amp; the U.S.</h2>
+  <hr class="hr" style="margin: 0;">
+
+  <section id="work" class="wrap" style="padding-top: clamp(40px,6vw,64px); padding-bottom: clamp(40px,6vw,64px);">
+    <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 10px;">Selected work</span>
+    <h2 style="font-size: clamp(28px,3.4vw,40px); margin: 0; max-width: 42ch; text-wrap: balance;">Field work and projects across Nicaragua &amp; the U.S.</h2>
+
+    <div class="work-grid" style="margin-top: 24px; border: 2px solid var(--color-divider);">
+
+      <article style="background: var(--color-bg); padding-bottom: 22px;">
+        <div class="grayscale" style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 16px;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%283%29.jpeg" alt="GNSS survey receiver on tripod" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding: 0 20px;">
+          <span class="tag tag-outline">Surveying</span>
+          <h3 style="font-size: 19px; margin: 12px 0 4px;">Topographic &amp; Cadastral Survey</h3>
+          <p style="font-size: 13px; font-weight: 800; color: var(--color-accent-700); margin: 0 0 8px;">Jinotepe, Carazo · Nicaragua</p>
+          <p class="text-muted" style="font-size: 14px; line-height: 1.5; margin: 0;">Georeferenced altimetry with contour lines over a 1,037 m² lot. Deslinde, amojonamiento, and plans valid for municipal cadastral filing, delivered with the digital design file.</p>
+        </div>
+      </article>
+
+      <article style="background: var(--color-bg); padding-bottom: 22px;">
+        <div class="grayscale" style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 16px;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2812%29.jpeg" alt="Steel warehouse frame erection with total station" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding: 0 20px;">
+          <span class="tag tag-outline">Industrial</span>
+          <h3 style="font-size: 19px; margin: 12px 0 4px;">Industrial Warehouse — Steel Structure</h3>
+          <p style="font-size: 13px; font-weight: 800; color: var(--color-accent-700); margin: 0 0 8px;">Nicaragua</p>
+          <p class="text-muted" style="font-size: 14px; line-height: 1.5; margin: 0;">Steel-frame warehouse: column and portal-frame erection with topographic control of axes and levels from foundation layout through structure.</p>
+        </div>
+      </article>
+
+      <article style="background: var(--color-bg); padding-bottom: 22px;">
+        <div class="grayscale" style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 16px;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%283%29.jpeg" alt="Steel columns in fabrication yard" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding: 0 20px;">
+          <span class="tag tag-outline">Steel</span>
+          <h3 style="font-size: 19px; margin: 12px 0 4px;">Steel Structure Fabrication</h3>
+          <p style="font-size: 13px; font-weight: 800; color: var(--color-accent-700); margin: 0 0 8px;">Nicaragua</p>
+          <p class="text-muted" style="font-size: 14px; line-height: 1.5; margin: 0;">Fabrication and assembly of heavy steel columns and moment frames in the yard, detailed and prepared for site erection.</p>
+        </div>
+      </article>
+
+      <article style="background: var(--color-bg); padding-bottom: 22px;">
+        <div class="grayscale" style="aspect-ratio: 4/3; overflow: hidden; background: #fff; margin-bottom: 16px;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.50%20PM.jpeg" alt="Architectural site analysis diagram with contours and sun paths" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="padding: 0 20px;">
+          <span class="tag tag-outline">Institutional</span>
+          <h3 style="font-size: 19px; margin: 12px 0 4px;">St. Helen's American Academy</h3>
+          <p style="font-size: 13px; font-weight: 800; color: var(--color-accent-700); margin: 0 0 8px;">Chinandega · Nicaragua</p>
+          <p class="text-muted" style="font-size: 14px; line-height: 1.5; margin: 0;">Design proposal (ArqLab) for the region's first bilingual school. Buildings abstract the academy's initials S, T and H — classrooms from preschool to secondary, auditorium, science, chemistry and robotics labs, library, plus courts, pool and green areas. ~2,766 m² built.</p>
+        </div>
+      </article>
+
+      <article style="background: var(--color-bg); padding-bottom: 22px;">
+        <div class="grayscale" style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 16px;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%281%29.jpeg" alt="Soil boring drilling rig in the field" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding: 0 20px;">
+          <span class="tag tag-outline">Geotechnical</span>
+          <h3 style="font-size: 19px; margin: 12px 0 4px;">Geotechnical Soil Study</h3>
+          <p style="font-size: 13px; font-weight: 800; color: var(--color-accent-700); margin: 0 0 8px;">Nicaragua</p>
+          <p class="text-muted" style="font-size: 14px; line-height: 1.5; margin: 0;">Soil boring and geotechnical investigation defining ground conditions to support the design of foundations and structures.</p>
+        </div>
+      </article>
+
+      <article style="background: var(--color-bg); padding-bottom: 22px;">
+        <div class="grayscale" style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 16px;"><img src="uploads/02-cover-cultural-center.jpg" alt="Render of a timber gridshell cultural center" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding: 0 20px;">
+          <span class="tag tag-outline">3D / BIM</span>
+          <h3 style="font-size: 19px; margin: 12px 0 4px;">3D Modeling &amp; Rendering</h3>
+          <p style="font-size: 13px; font-weight: 800; color: var(--color-accent-700); margin: 0 0 8px;">Studio work</p>
+          <p class="text-muted" style="font-size: 14px; line-height: 1.5; margin: 0;">BIM models and photoreal rendering that turn drawings into visualizations clients can understand before construction begins.</p>
+        </div>
+      </article>
+
+      <article style="background: var(--color-bg); padding-bottom: 22px;">
+        <div class="grayscale" style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 16px;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%288%29.jpeg" alt="Large-scale LED stage structure being built" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding: 0 20px;">
+          <span class="tag tag-outline">United States</span>
+          <h3 style="font-size: 19px; margin: 12px 0 4px;">Structural &amp; Event Staging</h3>
+          <p style="font-size: 13px; font-weight: 800; color: var(--color-accent-700); margin: 0 0 8px;">United States</p>
+          <p class="text-muted" style="font-size: 14px; line-height: 1.5; margin: 0;">Structural steel erection and large-scale event structures in the U.S., supporting project management and precise field coordination.</p>
+        </div>
+      </article>
+
+      <article style="background: var(--color-bg); padding-bottom: 22px;">
+        <div class="grayscale" style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 16px;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM.jpeg" alt="Surveyor with total station documenting an existing building" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="padding: 0 20px;">
+          <span class="tag tag-outline">Surveying</span>
+          <h3 style="font-size: 19px; margin: 12px 0 4px;">Cadastral Property Survey</h3>
+          <p style="font-size: 13px; font-weight: 800; color: var(--color-accent-700); margin: 0 0 8px;">Nicaragua</p>
+          <p class="text-muted" style="font-size: 14px; line-height: 1.5; margin: 0;">As-built and boundary survey with total station, defining property lines and dimensions of an existing structure for legal filing and renovation design.</p>
+        </div>
+      </article>
+
     </div>
 
-    <div class="pf-grid" style="margin-top: 32px;">
-
-      <article style="background: #fff; border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
-        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%283%29.jpeg" alt="GNSS survey receiver on tripod" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding: 18px 20px 22px;">
-          <span style="display: inline-block; background: var(--verde); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Surveying</span>
-          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Topographic &amp; Cadastral Survey</h3>
-          <p style="font-size: 13px; font-weight: 700; color: var(--terracota); margin: 0 0 8px;">Jinotepe, Carazo · Nicaragua</p>
-          <p style="font-size: 14px; line-height: 1.5; color: var(--soft); margin: 0;">Georeferenced altimetry with contour lines over a 1,037 m² lot. Deslinde, amojonamiento, and plans valid for municipal cadastral filing, delivered with the digital design file.</p>
-        </div>
-      </article>
-
-      <article style="background: #fff; border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
-        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2812%29.jpeg" alt="Steel warehouse frame erection with total station" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding: 18px 20px 22px;">
-          <span style="display: inline-block; background: var(--terracota); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Industrial</span>
-          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Industrial Warehouse — Steel Structure</h3>
-          <p style="font-size: 13px; font-weight: 700; color: var(--terracota); margin: 0 0 8px;">Nicaragua</p>
-          <p style="font-size: 14px; line-height: 1.5; color: var(--soft); margin: 0;">Steel-frame warehouse: column and portal-frame erection with topographic control of axes and levels from foundation layout through structure.</p>
-        </div>
-      </article>
-
-      <article style="background: #fff; border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
-        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%283%29.jpeg" alt="Steel columns in fabrication yard" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding: 18px 20px 22px;">
-          <span style="display: inline-block; background: var(--rosa); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Steel</span>
-          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Steel Structure Fabrication</h3>
-          <p style="font-size: 13px; font-weight: 700; color: var(--terracota); margin: 0 0 8px;">Nicaragua</p>
-          <p style="font-size: 14px; line-height: 1.5; color: var(--soft); margin: 0;">Fabrication and assembly of heavy steel columns and moment frames in the yard, detailed and prepared for site erection.</p>
-        </div>
-      </article>
-
-      <article style="background: #fff; border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
-        <div style="aspect-ratio: 4/3; overflow: hidden; background:#fff;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.50%20PM.jpeg" alt="Architectural site analysis diagram with contours and sun paths" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
-        <div style="padding: 18px 20px 22px;">
-          <span style="display: inline-block; background: var(--indigo); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Institutional</span>
-          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">St. Helen's American Academy</h3>
-          <p style="font-size: 13px; font-weight: 700; color: var(--terracota); margin: 0 0 8px;">Chinandega · Nicaragua</p>
-          <p style="font-size: 14px; line-height: 1.5; color: var(--soft); margin: 0;">Design proposal (ArqLab) for the region's first bilingual school. Buildings abstract the academy's initials S, T and H — classrooms from preschool to secondary, auditorium, science, chemistry and robotics labs, library, plus courts, pool and green areas. ~2,766 m² built.</p>
-        </div>
-      </article>
-
-      <article style="background: #fff; border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
-        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%281%29.jpeg" alt="Soil boring drilling rig in the field" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding: 18px 20px 22px;">
-          <span style="display: inline-block; background: var(--amarillo); color: var(--tinta); font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Geotechnical</span>
-          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Geotechnical Soil Study</h3>
-          <p style="font-size: 13px; font-weight: 700; color: var(--terracota); margin: 0 0 8px;">Nicaragua</p>
-          <p style="font-size: 14px; line-height: 1.5; color: var(--soft); margin: 0;">Soil boring and geotechnical investigation defining ground conditions to support the design of foundations and structures.</p>
-        </div>
-      </article>
-
-      <article style="background: #fff; border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
-        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/02-cover-cultural-center.jpg" alt="Render of a timber gridshell cultural center" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding: 18px 20px 22px;">
-          <span style="display: inline-block; background: var(--verde); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">3D / BIM</span>
-          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">3D Modeling &amp; Rendering</h3>
-          <p style="font-size: 13px; font-weight: 700; color: var(--terracota); margin: 0 0 8px;">Studio work</p>
-          <p style="font-size: 14px; line-height: 1.5; color: var(--soft); margin: 0;">BIM models and photoreal rendering that turn drawings into visualizations clients can understand before construction begins.</p>
-        </div>
-      </article>
-
-      <article style="background: #fff; border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
-        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%288%29.jpeg" alt="Large-scale LED stage structure being built" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding: 18px 20px 22px;">
-          <span style="display: inline-block; background: var(--indigo); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">United States</span>
-          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Structural &amp; Event Staging</h3>
-          <p style="font-size: 13px; font-weight: 700; color: var(--terracota); margin: 0 0 8px;">United States</p>
-          <p style="font-size: 14px; line-height: 1.5; color: var(--soft); margin: 0;">Structural steel erection and large-scale event structures in the U.S., supporting project management and precise field coordination.</p>
-        </div>
-      </article>
-
-      <article style="background: #fff; border-radius: var(--radius-lg,20px); overflow: hidden; box-shadow: var(--shadow-sm);">
-        <div style="aspect-ratio: 4/3; overflow: hidden;"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM.jpeg" alt="Surveyor with total station documenting an existing building" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="padding: 18px 20px 22px;">
-          <span style="display: inline-block; background: var(--verde); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .05em; padding: 4px 11px; border-radius: 999px; text-transform: uppercase;">Surveying</span>
-          <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 20px; margin: 12px 0 4px;">Cadastral Property Survey</h3>
-          <p style="font-size: 13px; font-weight: 700; color: var(--terracota); margin: 0 0 8px;">Nicaragua</p>
-          <p style="font-size: 14px; line-height: 1.5; color: var(--soft); margin: 0;">As-built and boundary survey with total station, defining property lines and dimensions of an existing structure for legal filing and renovation design.</p>
-        </div>
-      </article>
-
-    </div>
-
-    <div style="margin-top: 28px;">
-      <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0 0 16px;">In the field</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(150px,1fr)); gap: 12px;">
-        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2811%29.jpeg" alt="Setting out foundation layout" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2810%29.jpeg" alt="Total station at steel yard" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%284%29.jpeg" alt="GNSS receiver in a field" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%285%29.jpeg" alt="Field vehicle on a survey site" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%285%29.jpeg" alt="Crane erecting steel structure" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%287%29.jpeg" alt="Event stage build with boom lift" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div style="margin-top: 40px;">
+      <h3 style="font-size: 20px; margin: 0 0 16px;">In the field</h3>
+      <div class="thumb-grid" style="border: 2px solid var(--color-divider);">
+        <div class="grayscale" style="aspect-ratio: 1/1; overflow: hidden; background: var(--color-bg);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2811%29.jpeg" alt="Setting out foundation layout" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="grayscale" style="aspect-ratio: 1/1; overflow: hidden; background: var(--color-bg);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%2810%29.jpeg" alt="Total station at steel yard" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="grayscale" style="aspect-ratio: 1/1; overflow: hidden; background: var(--color-bg);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%284%29.jpeg" alt="GNSS receiver in a field" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="grayscale" style="aspect-ratio: 1/1; overflow: hidden; background: var(--color-bg);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.25.51%20PM%20%285%29.jpeg" alt="Field vehicle on a survey site" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="grayscale" style="aspect-ratio: 1/1; overflow: hidden; background: var(--color-bg);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%285%29.jpeg" alt="Crane erecting steel structure" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="grayscale" style="aspect-ratio: 1/1; overflow: hidden; background: var(--color-bg);"><img src="uploads/WhatsApp%20Image%202026-07-25%20at%2012.18.41%20PM%20%287%29.jpeg" alt="Event stage build with boom lift" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       </div>
-      <div style="margin-top: 18px;"><a href="gallery.html" style="font-size: 15px; font-weight: 700; color: var(--indigo); text-decoration: none;" style-hover="color:#0f2570;">See the full gallery →</a></div>
-    </div>
-  </section>
-
-  <section id="thesis" style="background: var(--indigo); color: #fff;">
-    <div class="sarape"><span style="background:var(--rosa)"></span><span style="background:var(--amarillo)"></span><span style="background:var(--verde)"></span><span style="background:var(--terracota)"></span></div>
-    <div class="wrap" style="padding-top: clamp(44px,6vw,80px); padding-bottom: clamp(44px,6vw,80px);">
-      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--amarillo);">Writing &amp; research</span>
-      <div style="display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 14px;">
-        <div style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(44px,9vw,110px); line-height: .9; letter-spacing: .01em;">NO <span style="color: var(--amarillo);">MINIMAL</span></div>
-      </div>
-      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3.2vw,38px); margin: 18px 0 0; line-height: 1.12; max-width: 24ch; text-wrap: balance;">No Minimal — an essay on Latin American architecture.</h2>
-      <p style="font-size: clamp(15px,1.5vw,18px); line-height: 1.6; max-width: 60ch; margin: 16px 0 0; color: #e7ecfb;">An authored essay and interactive site arguing why Latin America cannot be minimalist — a manifesto on color, climate, memory, and identity, across six dimensions.</p>
-      <div class="dims" style="margin-top: 26px;">
-        <div style="background: color-mix(in srgb, #fff 12%, transparent); border-radius: 14px; padding: 14px 16px;"><div style="font-family: var(--font-heading,'Caprasimo',serif); color: var(--amarillo); font-size: 15px;">01</div><div style="font-weight: 700; margin-top: 2px;">History</div></div>
-        <div style="background: color-mix(in srgb, #fff 12%, transparent); border-radius: 14px; padding: 14px 16px;"><div style="font-family: var(--font-heading,'Caprasimo',serif); color: var(--amarillo); font-size: 15px;">02</div><div style="font-weight: 700; margin-top: 2px;">Climate</div></div>
-        <div style="background: color-mix(in srgb, #fff 12%, transparent); border-radius: 14px; padding: 14px 16px;"><div style="font-family: var(--font-heading,'Caprasimo',serif); color: var(--amarillo); font-size: 15px;">03</div><div style="font-weight: 700; margin-top: 2px;">Culture</div></div>
-        <div style="background: color-mix(in srgb, #fff 12%, transparent); border-radius: 14px; padding: 14px 16px;"><div style="font-family: var(--font-heading,'Caprasimo',serif); color: var(--amarillo); font-size: 15px;">04</div><div style="font-weight: 700; margin-top: 2px;">Economy</div></div>
-        <div style="background: color-mix(in srgb, #fff 12%, transparent); border-radius: 14px; padding: 14px 16px;"><div style="font-family: var(--font-heading,'Caprasimo',serif); color: var(--amarillo); font-size: 15px;">05</div><div style="font-weight: 700; margin-top: 2px;">Urbanism</div></div>
-        <div style="background: color-mix(in srgb, #fff 12%, transparent); border-radius: 14px; padding: 14px 16px;"><div style="font-family: var(--font-heading,'Caprasimo',serif); color: var(--amarillo); font-size: 15px;">06</div><div style="font-weight: 700; margin-top: 2px;">Identity</div></div>
-      </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;">
-        <a href="https://nominimal.vercel.app/#tesis" target="_blank" rel="noopener" style="font-size: 15px; font-weight: 700; color: var(--indigo); background: var(--amarillo); padding: 14px 26px; border-radius: 999px; text-decoration: none;" style-hover="background:#fff;">Visit the site →</a>
-        <a href="https://nominimal.vercel.app/Ensayo Completo.html" target="_blank" rel="noopener" style="font-size: 15px; font-weight: 700; color: #fff; background: transparent; padding: 14px 26px; border-radius: 999px; text-decoration: none; border: 2px solid rgba(255,255,255,.6);" style-hover="background: rgba(255,255,255,.12);">Read the full essay</a>
-      </div>
-      <p style="font-size: 13px; color: #c3d0f2; margin: 22px 0 0;">Authored &amp; designed by Orelio Martínez · AIA Chicago · 2026</p>
+      <div style="margin-top: 18px;"><a href="gallery.html" class="btn btn-ghost">See the full gallery →</a></div>
     </div>
   </section>
 
-  <section id="experience" style="background: var(--sand);">
-    <div class="wrap" style="max-width: 1000px; padding-top: clamp(44px,6vw,80px); padding-bottom: clamp(44px,6vw,80px);">
-      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--terracota);">Experience</span>
-      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(28px,3.6vw,44px); margin: 10px 0 30px; line-height: 1.08;">A career built site by site.</h2>
+  <hr class="hr" style="margin: 0;">
 
-      <div style="display: flex; flex-direction: column; gap: 2px;">
+  <section id="thesis" style="position: relative; overflow: hidden; color: #fbf3df; background: radial-gradient(120% 90% at 78% 6%, rgba(244,184,31,.35), transparent 55%), radial-gradient(90% 80% at 6% 98%, rgba(229,20,125,.4), transparent 55%), linear-gradient(150deg, #0f4bd1 0%, #152a7a 55%, #0c1c56 100%);">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display: block; width: 100%; height: 44px;">
+      <g><polygon points="0,0 80,0 40,52" fill="#e5147d"/><polygon points="80,0 160,0 120,52" fill="#f4b81f"/><polygon points="160,0 240,0 200,52" fill="#12b6ad"/><polygon points="240,0 320,0 280,52" fill="#4faa2e"/><polygon points="320,0 400,0 360,52" fill="#e5147d"/><polygon points="400,0 480,0 440,52" fill="#f4b81f"/><polygon points="480,0 560,0 520,52" fill="#12b6ad"/><polygon points="560,0 640,0 600,52" fill="#4faa2e"/><polygon points="640,0 720,0 680,52" fill="#e5147d"/><polygon points="720,0 800,0 760,52" fill="#f4b81f"/><polygon points="800,0 880,0 840,52" fill="#12b6ad"/><polygon points="880,0 960,0 920,52" fill="#4faa2e"/><polygon points="960,0 1040,0 1000,52" fill="#e5147d"/><polygon points="1040,0 1120,0 1080,52" fill="#f4b81f"/><polygon points="1120,0 1200,0 1160,52" fill="#12b6ad"/><polygon points="1200,0 1280,0 1240,52" fill="#4faa2e"/><polygon points="1280,0 1360,0 1320,52" fill="#e5147d"/><polygon points="1360,0 1440,0 1400,52" fill="#f4b81f"/></g>
+    </svg>
 
-        <div class="exp-row" style="padding: 22px 0; border-top: 2px solid var(--terracota);">
-          <div style="font-size: 13.5px; font-weight: 800; color: var(--terracota);">Jan 2026 – Present<div style="font-weight: 600; color: var(--soft); margin-top: 3px;">Remote · U.S. &amp; Nicaragua</div></div>
+    <div class="wrap" style="position: relative; z-index: 2; padding-top: clamp(20px,3vw,32px); padding-bottom: clamp(40px,5vw,56px);">
+      <div class="hero-grid" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(24px,4vw,48px); align-items: center;">
+        <div>
+          <span style="display: inline-block; background: #e5147d; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; font-size: 12px; padding: 8px 15px;">Tesis rectora · Arq. Orelio Martínez</span>
+          <h2 style="font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .005em; line-height: .86; font-size: clamp(40px,6.6vw,100px); margin: 18px 0 0; color: #fbf3df;">
+            <span style="display: block;">América</span>
+            <span style="display: block;">Latina</span>
+            <span style="display: inline-block; background: #f4b81f; color: #152a7a; padding: 0 .12em; transform: rotate(-2deg);">NO</span>
+            <span style="display: block; color: #12b6ad;">puede ser</span>
+            <span style="display: block; -webkit-text-stroke: 3px #e5147d; color: transparent;">minimalista</span>
+          </h2>
+          <p style="max-width: 44ch; margin: 22px 0 0; font-size: 17px; line-height: 1.6; font-weight: 600; color: #fbf3df;">Minimalism is an imported neutrality. Here, building happens through necessity, mixture, and improvisation — <em>color isn't excess, it's life, memory, and identity</em>.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px;">
+            <a href="https://nominimal.vercel.app/index.html#hero" target="_blank" rel="noopener" style="background: #f4b81f; color: #152a7a; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 14px; padding: 15px 26px; text-decoration: none;">Enter the work ↓</a>
+            <a href="https://nominimal.vercel.app/index.html#manifiesto" target="_blank" rel="noopener" style="border: 3px solid #12b6ad; color: #12b6ad; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 14px; padding: 12px 23px; text-decoration: none;">Manifesto</a>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; transform: rotate(1.5deg);">
+          <div style="position: relative; height: 170px; border: 5px solid #f4b81f; box-shadow: 8px 8px 0 rgba(0,0,0,.35); overflow: hidden;"><img src="uploads/02-cover-cultural-center.jpg" alt="Colorful cultural center render" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="position: relative; height: 120px; border: 5px solid #e5147d; box-shadow: 8px 8px 0 rgba(0,0,0,.35); margin-top: 22px; overflow: hidden;"><img src="uploads/06-render-kitchen-interior.jpg" alt="Warm-toned interior render" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="position: relative; height: 120px; border: 5px solid #12b6ad; box-shadow: 8px 8px 0 rgba(0,0,0,.35); overflow: hidden;"><img src="uploads/05-render-coastal-plaza.jpg" alt="Coastal plaza render" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="position: relative; height: 170px; border: 5px solid #4faa2e; box-shadow: 8px 8px 0 rgba(0,0,0,.35); margin-top: -22px; overflow: hidden;"><img src="uploads/09-render-cultural-atrium.jpg" alt="Cultural atrium render" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="position: relative; z-index: 2; overflow: hidden; white-space: nowrap; border-top: 3px solid #f4b81f; border-bottom: 3px solid #f4b81f; background: rgba(0,0,0,.28); padding: 11px 0; font-family: 'Anton', sans-serif; font-weight: 400; color: #f4b81f; letter-spacing: .12em; font-size: 15px;">
+      <div style="display: inline-block; animation: nm-marquee 32s linear infinite;">&nbsp;MÉXICO&nbsp;·&nbsp;GUATEMALA&nbsp;·&nbsp;EL SALVADOR&nbsp;·&nbsp;HONDURAS&nbsp;·&nbsp;NICARAGUA&nbsp;·&nbsp;COSTA RICA&nbsp;·&nbsp;PANAMÁ&nbsp;·&nbsp;COLOMBIA&nbsp;·&nbsp;VENEZUELA&nbsp;·&nbsp;ECUADOR&nbsp;·&nbsp;PERÚ&nbsp;·&nbsp;BOLIVIA&nbsp;·&nbsp;CHILE&nbsp;·&nbsp;BRASIL&nbsp;·&nbsp;MÉXICO&nbsp;·&nbsp;GUATEMALA&nbsp;·&nbsp;EL SALVADOR&nbsp;·&nbsp;HONDURAS&nbsp;·&nbsp;NICARAGUA&nbsp;·&nbsp;COSTA RICA&nbsp;·&nbsp;PANAMÁ&nbsp;·&nbsp;COLOMBIA&nbsp;·&nbsp;VENEZUELA&nbsp;·&nbsp;ECUADOR&nbsp;·&nbsp;PERÚ&nbsp;·&nbsp;BOLIVIA&nbsp;·&nbsp;CHILE&nbsp;·&nbsp;BRASIL&nbsp;·&nbsp;</div>
+    </div>
+    <p style="position: relative; z-index: 2; text-align: center; padding: 16px; margin: 0; color: rgba(251,243,223,.75); font-size: 12.5px; font-weight: 700;">Authored &amp; designed by Orelio Martínez · AIA Chicago · 2026</p>
+  </section>
+
+  <hr class="hr" style="margin: 0;">
+
+  <section id="experience" style="background: var(--color-surface);">
+    <div class="wrap" style="max-width: 1000px; padding-top: clamp(48px,6vw,80px); padding-bottom: clamp(48px,6vw,80px);">
+      <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 10px;">Experience</span>
+      <h2 style="font-size: clamp(28px,3.4vw,40px); margin: 0 0 8px;">A career built site by site.</h2>
+
+      <div style="margin-top: 16px;">
+
+        <div class="exp-row" style="padding: 24px 0; border-top: 2px solid var(--color-divider);">
+          <div><div style="font-size: 13px; font-weight: 800; color: var(--color-accent-700);">Jan 2026 – Present</div><div class="text-muted" style="font-size: 13px; margin-top: 3px;">Remote · U.S. &amp; Nicaragua</div></div>
           <div>
-            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">Veritas Drafting LLC</h3>
-            <p style="font-size: 14.5px; font-weight: 700; color: var(--verde); margin: 3px 0 8px;">General Manager</p>
-            <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Direct the full operational, financial, and client-service performance of an owner-operated CAD drafting and 3D-modeling outsourcing firm, with a production team in Nicaragua serving U.S.-based AEC clients. Built standardized workflows for drafting, modeling, rendering, and QA, and serve as primary technical contact translating client requirements into on-time, on-spec delivery.</p>
+            <h3 style="font-size: 21px; margin: 0;">Veritas Drafting LLC</h3>
+            <p style="font-size: 14px; font-weight: 800; margin: 3px 0 8px;">Owner &amp; General Manager</p>
+            <p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0;">Founded and wholly own Veritas Drafting, directing its full operational, financial, and client-service performance — a CAD drafting and 3D-modeling outsourcing firm with a production team in Nicaragua serving U.S.-based AEC clients. Built standardized workflows for drafting, modeling, rendering, and QA, and serve as primary technical contact translating client requirements into on-time, on-spec delivery.</p>
           </div>
         </div>
 
-        <div class="exp-row" style="padding: 22px 0; border-top: 1px solid color-mix(in srgb, var(--soft) 20%, transparent);">
-          <div style="font-size: 13.5px; font-weight: 800; color: var(--terracota);">2023 – Present<div style="font-weight: 600; color: var(--soft); margin-top: 3px;">Nicaragua</div></div>
+        <div class="exp-row" style="padding: 24px 0; border-top: 1px solid var(--color-divider);">
+          <div><div style="font-size: 13px; font-weight: 800; color: var(--color-accent-700);">2023 – Present</div><div class="text-muted" style="font-size: 13px; margin-top: 3px;">Nicaragua</div></div>
           <div>
-            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">Martínez-Segura Multiservicios</h3>
-            <p style="font-size: 14.5px; font-weight: 700; color: var(--verde); margin: 3px 0 8px;">Co-Founder &amp; General Manager</p>
-            <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Co-founder of a two-partner multiservice engineering firm delivering topographic and cadastral surveying, georeferenced mapping, property-appraisal support, architectural design, and construction. Produce georeferenced surveys, contour mapping, and digital CAD site files for design, permitting, and valuation — owning pricing, contracting, invoicing, and end-to-end delivery while coordinating field crews and suppliers across concurrent projects.</p>
+            <h3 style="font-size: 21px; margin: 0;">Martínez-Segura Multiservicios</h3>
+            <p style="font-size: 14px; font-weight: 800; margin: 3px 0 8px;">Co-Founder &amp; General Manager</p>
+            <p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0;">Co-founder of a two-partner multiservice engineering firm delivering topographic and cadastral surveying, georeferenced mapping, property-appraisal support, architectural design, and construction. Produce georeferenced surveys, contour mapping, and digital CAD site files for design, permitting, and valuation — owning pricing, contracting, invoicing, and end-to-end delivery while coordinating field crews and suppliers across concurrent projects.</p>
           </div>
         </div>
 
-        <div class="exp-row" style="padding: 22px 0; border-top: 1px solid color-mix(in srgb, var(--soft) 20%, transparent);">
-          <div style="font-size: 13.5px; font-weight: 800; color: var(--terracota);">Mar 2024 – May 2025<div style="font-weight: 600; color: var(--soft); margin-top: 3px;">Nicaragua</div></div>
+        <div class="exp-row" style="padding: 24px 0; border-top: 1px solid var(--color-divider);">
+          <div><div style="font-size: 13px; font-weight: 800; color: var(--color-accent-700);">Mar 2024 – May 2025</div><div class="text-muted" style="font-size: 13px; margin-top: 3px;">Nicaragua</div></div>
           <div>
-            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">Eniconsa</h3>
-            <p style="font-size: 14.5px; font-weight: 700; color: var(--verde); margin: 3px 0 8px;">Project Engineer &amp; Estimator</p>
-            <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Managed the full lifecycle of industrial, energy, and infrastructure projects — estimating, budgeting, scheduling, and execution through close-out. Prepared cost estimates, quantity takeoffs, and budgets for bids and cost control, and supervised field details through client sign-off. Key projects: SINSA warehouse (Ocotal), solar-panel installations (Chinandega &amp; Jinotega), pipeline design and installation (El Rama), and Cemex facility upgrades (Managua).</p>
+            <h3 style="font-size: 21px; margin: 0;">Eniconsa</h3>
+            <p style="font-size: 14px; font-weight: 800; margin: 3px 0 8px;">Project Engineer &amp; Estimator</p>
+            <p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0;">Managed the full lifecycle of industrial, energy, and infrastructure projects — estimating, budgeting, scheduling, and execution through close-out. Prepared cost estimates, quantity takeoffs, and budgets for bids and cost control, and supervised field details through client sign-off. Key projects: SINSA warehouse (Ocotal), solar-panel installations (Chinandega &amp; Jinotega), pipeline design and installation (El Rama), and Cemex facility upgrades (Managua).</p>
           </div>
         </div>
 
-        <div class="exp-row" style="padding: 22px 0; border-top: 1px solid color-mix(in srgb, var(--soft) 20%, transparent);">
-          <div style="font-size: 13.5px; font-weight: 800; color: var(--terracota);">Mar 2024 – Mar 2025<div style="font-weight: 600; color: var(--soft); margin-top: 3px;">Nicaragua</div></div>
+        <div class="exp-row" style="padding: 24px 0; border-top: 1px solid var(--color-divider);">
+          <div><div style="font-size: 13px; font-weight: 800; color: var(--color-accent-700);">Mar 2024 – Mar 2025</div><div class="text-muted" style="font-size: 13px; margin-top: 3px;">Nicaragua</div></div>
           <div>
-            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">ArqLab</h3>
-            <p style="font-size: 14.5px; font-weight: 700; color: var(--verde); margin: 3px 0 8px;">Project Designer · Land Surveyor · Project Manager</p>
-            <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Led architectural projects from concept through construction documentation for residential, institutional, and religious-facility clients, managing scope, budget, and schedule. Performed land surveying and boundary analysis and directed teams to resolve design conflicts and maintain constructability. Portfolio: St. Helen's American Academy (Chinandega), Valdivia Residence (Jinotepe), Santos Home (Mateare), Lacayo renovation (Managua), and Iglesia “De Todos los Santos” (Managua).</p>
+            <h3 style="font-size: 21px; margin: 0;">ArqLab</h3>
+            <p style="font-size: 14px; font-weight: 800; margin: 3px 0 8px;">Project Designer · Land Surveyor · Project Manager</p>
+            <p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0;">Led architectural projects from concept through construction documentation for residential, institutional, and religious-facility clients, managing scope, budget, and schedule. Performed land surveying and boundary analysis and directed teams to resolve design conflicts and maintain constructability. Portfolio: St. Helen's American Academy (Chinandega), Valdivia Residence (Jinotepe), Santos Home (Mateare), Lacayo renovation (Managua), and Iglesia “De Todos los Santos” (Managua).</p>
           </div>
         </div>
 
-        <div class="exp-row" style="padding: 22px 0; border-top: 1px solid color-mix(in srgb, var(--soft) 20%, transparent);">
-          <div style="font-size: 13.5px; font-weight: 800; color: var(--terracota);">Oct 2020 – Aug 2022<div style="font-weight: 600; color: var(--soft); margin-top: 3px;">Managua · Nicaragua</div></div>
+        <div class="exp-row" style="padding: 24px 0; border-top: 1px solid var(--color-divider);">
+          <div><div style="font-size: 13px; font-weight: 800; color: var(--color-accent-700);">Oct 2020 – Aug 2022</div><div class="text-muted" style="font-size: 13px; margin-top: 3px;">Managua · Nicaragua</div></div>
           <div>
-            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">Universidad Nacional de Ingeniería (UNI)</h3>
-            <p style="font-size: 14.5px; font-weight: 700; color: var(--verde); margin: 3px 0 8px;">Architectural Advisor</p>
-            <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Mentored multidisciplinary teams of emerging architects and engineers on projects advancing national infrastructure and urban development, reviewing drawings and design proposals for code compliance, feasibility, and design quality.</p>
+            <h3 style="font-size: 21px; margin: 0;">Universidad Nacional de Ingeniería (UNI)</h3>
+            <p style="font-size: 14px; font-weight: 800; margin: 3px 0 8px;">Architectural Advisor</p>
+            <p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0;">Mentored multidisciplinary teams of emerging architects and engineers on projects advancing national infrastructure and urban development, reviewing drawings and design proposals for code compliance, feasibility, and design quality.</p>
           </div>
         </div>
 
-        <div class="exp-row" style="padding: 22px 0; border-top: 1px solid color-mix(in srgb, var(--soft) 20%, transparent); border-bottom: 2px solid var(--terracota);">
-          <div style="font-size: 13.5px; font-weight: 800; color: var(--terracota);">Jun 2020 – Sep 2020<div style="font-weight: 600; color: var(--soft); margin-top: 3px;">Nicaragua</div></div>
+        <div class="exp-row" style="padding: 24px 0; border-top: 1px solid var(--color-divider); border-bottom: 2px solid var(--color-divider);">
+          <div><div style="font-size: 13px; font-weight: 800; color: var(--color-accent-700);">Jun 2020 – Sep 2020</div><div class="text-muted" style="font-size: 13px; margin-top: 3px;">Nicaragua</div></div>
           <div>
-            <h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 22px; margin: 0;">MTI — Ministry of Transportation &amp; Infrastructure</h3>
-            <p style="font-size: 14.5px; font-weight: 700; color: var(--verde); margin: 3px 0 8px;">Project Lead</p>
-            <p style="font-size: 14.5px; line-height: 1.55; color: var(--soft); margin: 0;">Led the “Vehicle Count for Road Design” study for the La Concepción–La Borgoña corridor, directing field data collection and traffic analysis; findings were adopted by the Department of Transportation to inform new roadway design.</p>
+            <h3 style="font-size: 21px; margin: 0;">MTI — Ministry of Transportation &amp; Infrastructure</h3>
+            <p style="font-size: 14px; font-weight: 800; margin: 3px 0 8px;">Project Lead</p>
+            <p class="text-muted" style="font-size: 14.5px; line-height: 1.55; margin: 0;">Led the “Vehicle Count for Road Design” study for the La Concepción–La Borgoña corridor, directing field data collection and traffic analysis; findings were adopted by the Department of Transportation to inform new roadway design.</p>
           </div>
         </div>
 
       </div>
 
-      <div style="margin-top: 30px;">
-        <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--terracota);">Additional experience</span>
-        <div class="add-grid" style="margin-top: 14px;">
-          <div style="background: #fff; border-radius: var(--radius-lg,16px); padding: 18px 20px; box-shadow: var(--shadow-sm);"><h4 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 17px; margin: 0 0 2px;">The Home Depot</h4><p style="font-size: 13px; font-weight: 700; color: var(--verde); margin: 0 0 6px;">Pro Sales Associate · Oct 2025 – Jan 2026</p><p style="font-size: 13.5px; line-height: 1.5; color: var(--soft); margin: 0;">Supported contractors and commercial customers with orders, delivery coordination, and product selection for construction projects.</p></div>
-          <div style="background: #fff; border-radius: var(--radius-lg,16px); padding: 18px 20px; box-shadow: var(--shadow-sm);"><h4 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 17px; margin: 0 0 2px;">Microsoft</h4><p style="font-size: 13px; font-weight: 700; color: var(--verde); margin: 0 0 6px;">Associate Customer Success · Dec 2023 – Nov 2024</p><p style="font-size: 13.5px; line-height: 1.5; color: var(--soft); margin: 0;">Partnered with customers to drive product adoption and value realization, building long-term client relationships (remote).</p></div>
-          <div style="background: #fff; border-radius: var(--radius-lg,16px); padding: 18px 20px; box-shadow: var(--shadow-sm);"><h4 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: 17px; margin: 0 0 2px;">Toast</h4><p style="font-size: 13px; font-weight: 700; color: var(--verde); margin: 0 0 6px;">Customer Care Advisor · Aug 2022 – Nov 2023</p><p style="font-size: 13.5px; line-height: 1.5; color: var(--soft); margin: 0;">Managed B2B accounts, identified growth opportunities, and collaborated cross-functionally on account strategy.</p></div>
+      <div style="margin-top: 32px;">
+        <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 12px;">Additional experience</span>
+        <div class="add-grid" style="border: 2px solid var(--color-divider);">
+          <div style="background: var(--color-bg); padding: 18px 20px;"><h4 style="font-size: 16px; margin: 0 0 2px;">The Home Depot</h4><p style="font-size: 12.5px; font-weight: 800; margin: 0 0 6px;">Pro Sales Associate · Oct 2025 – Jan 2026</p><p class="text-muted" style="font-size: 13px; line-height: 1.5; margin: 0;">Supported contractors and commercial customers with orders, delivery coordination, and product selection for construction projects.</p></div>
+          <div style="background: var(--color-bg); padding: 18px 20px;"><h4 style="font-size: 16px; margin: 0 0 2px;">Microsoft</h4><p style="font-size: 12.5px; font-weight: 800; margin: 0 0 6px;">Associate Customer Success · Dec 2023 – Nov 2024</p><p class="text-muted" style="font-size: 13px; line-height: 1.5; margin: 0;">Partnered with customers to drive product adoption and value realization, building long-term client relationships (remote).</p></div>
+          <div style="background: var(--color-bg); padding: 18px 20px;"><h4 style="font-size: 16px; margin: 0 0 2px;">Toast</h4><p style="font-size: 12.5px; font-weight: 800; margin: 0 0 6px;">Customer Care Advisor · Aug 2022 – Nov 2023</p><p class="text-muted" style="font-size: 13px; line-height: 1.5; margin: 0;">Managed B2B accounts, identified growth opportunities, and collaborated cross-functionally on account strategy.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="wrap" style="padding-top: clamp(44px,6vw,72px); padding-bottom: clamp(44px,6vw,72px);">
+  <hr class="hr" style="margin: 0;">
+
+  <section class="wrap" style="padding-top: clamp(48px,6vw,72px); padding-bottom: clamp(48px,6vw,72px);">
     <div class="two-col">
       <div>
-        <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--terracota);">Credentials</span>
-        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.2vw,38px); margin: 10px 0 20px; line-height: 1.1;">Certifications &amp; licenses</h2>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--rosa); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Associate Architect</strong> — American Institute of Architects (AIA) · Cert. #40873955 · 2025</span></li>
-          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--verde); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Project Management Professional (PMP)</strong> — PMI · Cert. #12090792 · 2025</span></li>
-          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--indigo); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Certified Member</strong> — American Concrete Institute (ACI) · Cert. #2357545 · 2025</span></li>
-          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--terracota); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>NCEES Certified</strong> — National Council of Examiners for Engineering &amp; Surveying · Cert. #26-121-59 · 2025</span></li>
-          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--rosa); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>AXP Supervisor / Architect</strong> — NCARB · 2025</span></li>
-          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="color: var(--verde); font-weight: 800; font-size: 18px; line-height: 1.3;">✦</span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Autodesk Certified Professional</strong> — AutoCAD, Revit, Civil 3D · 2025</span></li>
+        <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 10px;">Credentials</span>
+        <h2 style="font-size: clamp(26px,3vw,36px); margin: 0 0 20px;">Certifications &amp; licenses</h2>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="flex: none; width: 8px; height: 8px; margin-top: 6px; background: var(--color-accent);"></span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Associate Architect</strong> — American Institute of Architects (AIA) · Cert. #40873955 · 2025</span></li>
+          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="flex: none; width: 8px; height: 8px; margin-top: 6px; background: var(--color-accent);"></span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Project Management Professional (PMP)</strong> — PMI · Cert. #12090792 · 2025</span></li>
+          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="flex: none; width: 8px; height: 8px; margin-top: 6px; background: var(--color-accent);"></span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Certified Member</strong> — American Concrete Institute (ACI) · Cert. #2357545 · 2025</span></li>
+          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="flex: none; width: 8px; height: 8px; margin-top: 6px; background: var(--color-accent);"></span><span style="font-size: 14.5px; line-height: 1.5;"><strong>AXP Supervisor / Architect</strong> — NCARB · 2025</span></li>
+          <li style="display: flex; gap: 12px; align-items: flex-start;"><span style="flex: none; width: 8px; height: 8px; margin-top: 6px; background: var(--color-accent);"></span><span style="font-size: 14.5px; line-height: 1.5;"><strong>Autodesk Certified Professional</strong> — AutoCAD, Revit, Civil 3D · 2025</span></li>
         </ul>
 
-        <div style="margin-top: 28px;">
-          <div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 12px;">Verified documents</div>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            <a href="uploads/NCARB_AXP_Supervisor_Certificate.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--sand); border-left: 5px solid var(--terracota); border-radius: 14px; padding: 13px 16px; text-decoration: none; color: var(--tinta); box-shadow: var(--shadow-sm);" style-hover="border-color: var(--terracota);"><span style="flex: none; width: 34px; height: 34px; border-radius: 999px; background: color-mix(in srgb, var(--terracota) 14%, #fff); display: grid; place-items: center; font-size: 16px;">📄</span><span style="flex: 1;"><span style="display: block; font-weight: 700; font-size: 14.5px;">NCARB — AXP Supervisor Training</span><span style="display: block; font-size: 12.5px; color: var(--soft); margin-top: 1px;">Certificate of Completion · 2025</span></span><span style="flex: none; color: var(--indigo); font-weight: 700; font-size: 14px;">↗</span></a>
-            <a href="uploads/NCARB_Continuum_Transcript_2025.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--sand); border-left: 5px solid var(--terracota); border-radius: 14px; padding: 13px 16px; text-decoration: none; color: var(--tinta); box-shadow: var(--shadow-sm);" style-hover="border-color: var(--terracota);"><span style="flex: none; width: 34px; height: 34px; border-radius: 999px; background: color-mix(in srgb, var(--terracota) 14%, #fff); display: grid; place-items: center; font-size: 16px;">📄</span><span style="flex: 1;"><span style="display: block; font-weight: 700; font-size: 14.5px;">NCARB — Continuum Education</span><span style="display: block; font-size: 12.5px; color: var(--soft); margin-top: 1px;">Continuing-education transcript · 2025</span></span><span style="flex: none; color: var(--indigo); font-weight: 700; font-size: 14px;">↗</span></a>
-            <a href="uploads/ACI_Constructability_Certificate.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--sand); border-left: 5px solid var(--terracota); border-radius: 14px; padding: 13px 16px; text-decoration: none; color: var(--tinta); box-shadow: var(--shadow-sm);" style-hover="border-color: var(--terracota);"><span style="flex: none; width: 34px; height: 34px; border-radius: 999px; background: color-mix(in srgb, var(--terracota) 14%, #fff); display: grid; place-items: center; font-size: 16px;">📄</span><span style="flex: 1;"><span style="display: block; font-weight: 700; font-size: 14.5px;">ACI University — Constructability Series</span><span style="display: block; font-size: 12.5px; color: var(--soft); margin-top: 1px;">Certificate of Completion · 2025</span></span><span style="flex: none; color: var(--indigo); font-weight: 700; font-size: 14px;">↗</span></a>
-            <a href="uploads/UNI_Historial_Academico.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--sand); border-left: 5px solid var(--indigo); border-radius: 14px; padding: 13px 16px; text-decoration: none; color: var(--tinta); box-shadow: var(--shadow-sm);" style-hover="border-color: var(--indigo);"><span style="flex: none; width: 34px; height: 34px; border-radius: 999px; background: color-mix(in srgb, var(--indigo) 14%, #fff); display: grid; place-items: center; font-size: 16px;">🎓</span><span style="flex: 1;"><span style="display: block; font-weight: 700; font-size: 14.5px;">Universidad Nacional de Ingeniería (UNI)</span><span style="display: block; font-size: 12.5px; color: var(--soft); margin-top: 1px;">Official academic transcript · Civil Engineering</span></span><span style="flex: none; color: var(--indigo); font-weight: 700; font-size: 14px;">↗</span></a>
+        <div style="margin-top: 32px;">
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;">Verified documents</div>
+          <div>
+            <a href="uploads/NCARB_AXP_Supervisor_Certificate.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 0; border-top: 1px solid var(--color-divider); text-decoration: none; color: var(--color-text);"><span><span style="display: block; font-weight: 800; font-size: 14.5px;">NCARB — AXP Supervisor Training</span><span class="text-muted" style="display: block; font-size: 12.5px; margin-top: 2px;">Certificate of Completion · 2025</span></span><span style="flex: none; color: var(--color-accent); font-weight: 800; font-size: 15px;">→</span></a>
+            <a href="uploads/NCARB_Continuum_Transcript_2025.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 0; border-top: 1px solid var(--color-divider); text-decoration: none; color: var(--color-text);"><span><span style="display: block; font-weight: 800; font-size: 14.5px;">NCARB — Continuum Education</span><span class="text-muted" style="display: block; font-size: 12.5px; margin-top: 2px;">Continuing-education transcript · 2025</span></span><span style="flex: none; color: var(--color-accent); font-weight: 800; font-size: 15px;">→</span></a>
+            <a href="uploads/ACI_Constructability_Certificate.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 0; border-top: 1px solid var(--color-divider); text-decoration: none; color: var(--color-text);"><span><span style="display: block; font-weight: 800; font-size: 14.5px;">ACI University — Constructability Series</span><span class="text-muted" style="display: block; font-size: 12.5px; margin-top: 2px;">Certificate of Completion · 2025</span></span><span style="flex: none; color: var(--color-accent); font-weight: 800; font-size: 15px;">→</span></a>
+            <a href="uploads/UNI_Historial_Academico.pdf" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 0; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); text-decoration: none; color: var(--color-text);"><span><span style="display: block; font-weight: 800; font-size: 14.5px;">Universidad Nacional de Ingeniería (UNI)</span><span class="text-muted" style="display: block; font-size: 12.5px; margin-top: 2px;">Official academic transcript · Civil Engineering</span></span><span style="flex: none; color: var(--color-accent); font-weight: 800; font-size: 15px;">→</span></a>
           </div>
         </div>
       </div>
       <div>
-        <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--terracota);">Toolkit</span>
-        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(26px,3.2vw,38px); margin: 10px 0 20px; line-height: 1.1;">Skills &amp; software</h2>
+        <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 10px;">Toolkit</span>
+        <h2 style="font-size: clamp(26px,3vw,36px); margin: 0 0 20px;">Skills &amp; software</h2>
         <div style="display: flex; flex-direction: column; gap: 18px;">
-          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Design &amp; Modeling</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">AutoCAD</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Revit</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Civil 3D</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">SketchUp</span></div></div>
-          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Rendering &amp; Visualization</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">V-Ray</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Lumion</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">D5</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Twinmotion</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Enscape</span></div></div>
-          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Project &amp; Business Systems</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Procore</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Jira / Atlassian</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Salesforce</span></div></div>
-          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">BIM Methodology</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">ISO 19650</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Model coordination</span><span style="background: #fff; border: 1px solid var(--sand); border-radius: 999px; padding: 6px 14px; font-size: 13px;">Deliverable QA</span></div></div>
-          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Education</div><p style="font-size: 14px; line-height: 1.5; margin: 0; color: var(--soft);"><strong>B.Sc. Civil Engineering</strong>, UNI Nicaragua (2019–2024) · <strong>Minor in Architecture</strong>, UNI–ANIA (2024)</p></div>
+          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Design &amp; Modeling</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="tag tag-outline">AutoCAD</span><span class="tag tag-outline">Revit</span><span class="tag tag-outline">Civil 3D</span><span class="tag tag-outline">SketchUp</span><span class="tag tag-outline">Rhino</span></div></div>
+          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Rendering &amp; Visualization</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="tag tag-outline">V-Ray</span><span class="tag tag-outline">Lumion</span><span class="tag tag-outline">D5</span><span class="tag tag-outline">Twinmotion</span><span class="tag tag-outline">Enscape</span></div></div>
+          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Project &amp; Business Systems</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="tag tag-outline">Procore</span><span class="tag tag-outline">Jira / Atlassian</span><span class="tag tag-outline">Salesforce</span></div></div>
+          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">BIM Methodology</div><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="tag tag-outline">ISO 19650</span><span class="tag tag-outline">Model coordination</span><span class="tag tag-outline">Deliverable QA</span></div></div>
+          <div><div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Education</div><p class="text-muted" style="font-size: 14px; line-height: 1.5; margin: 0;"><strong>B.Sc. Civil Engineering</strong>, UNI Nicaragua (2019–2024) · <strong>Minor in Architecture</strong>, UNI–ANIA (2024)</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="cv" style="background: linear-gradient(180deg,#efe2c8 0%,var(--arena) 100%); border-top: 1px solid var(--sand);">
-    <div class="wrap" style="padding-top: clamp(44px,6vw,72px); padding-bottom: clamp(44px,6vw,72px);">
-      <div style="max-width: 62ch;">
-        <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--terracota);">Résumé by country</span>
-        <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(28px,3.6vw,44px); margin: 10px 0 0; line-height: 1.08; text-wrap: balance;">One profile, tuned to four markets.</h2>
-        <p style="font-size: 16px; line-height: 1.6; color: var(--soft); margin: 16px 0 0;">Same experience, education, and certifications — only the focus and work-authorization notes change. Pick a region to see the emphasis and download the matching CV.</p>
+  <hr class="hr" style="margin: 0;">
+
+  <section id="cv" style="background: var(--color-surface);">
+    <div class="wrap" style="padding-top: clamp(48px,6vw,72px); padding-bottom: clamp(48px,6vw,72px);">
+      <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 10px;">Résumé by country</span>
+      <h2 style="font-size: clamp(28px,3.4vw,40px); margin: 0; max-width: 30ch; text-wrap: balance;">One profile, tuned to four markets.</h2>
+      <p class="text-muted" style="font-size: 15px; line-height: 1.6; max-width: 60ch; margin: 14px 0 0;">Same experience, education, and certifications — only the focus and work-authorization notes change. Pick a region to see the emphasis and download the matching CV.</p>
+
+      <div role="tablist" aria-label="Résumé by country" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px;">
+        <button data-cv-tab="mx" role="tab" onClick="{{ selMx }}" type="button" style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; color: var(--color-text); background: transparent; border: 1px solid var(--color-divider); padding: 11px 20px; cursor: pointer;">Mexico</button>
+        <button data-cv-tab="cr" role="tab" onClick="{{ selCr }}" type="button" style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; color: var(--color-text); background: transparent; border: 1px solid var(--color-divider); padding: 11px 20px; cursor: pointer;">Costa Rica</button>
+        <button data-cv-tab="ni" role="tab" onClick="{{ selNi }}" type="button" style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; color: var(--color-text); background: transparent; border: 1px solid var(--color-divider); padding: 11px 20px; cursor: pointer;">Nicaragua</button>
+        <button data-cv-tab="es" role="tab" onClick="{{ selEs }}" type="button" style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; color: var(--color-text); background: transparent; border: 1px solid var(--color-divider); padding: 11px 20px; cursor: pointer;">Spain</button>
       </div>
 
-      <div role="tablist" aria-label="Résumé by country" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;">
-        <button data-cv-tab="mx" role="tab" onClick="{{ selMx }}" style="display: flex; align-items: center; gap: 9px; font-family: var(--font-body,'Figtree',sans-serif); font-size: 15px; font-weight: 700; color: var(--tinta); background: #fff; border: 1px solid var(--sand); padding: 11px 20px; border-radius: 999px; cursor: pointer;"><span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; opacity: .55;">MX</span>Mexico</button>
-        <button data-cv-tab="cr" role="tab" onClick="{{ selCr }}" style="display: flex; align-items: center; gap: 9px; font-family: var(--font-body,'Figtree',sans-serif); font-size: 15px; font-weight: 700; color: var(--tinta); background: #fff; border: 1px solid var(--sand); padding: 11px 20px; border-radius: 999px; cursor: pointer;"><span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; opacity: .55;">CR</span>Costa Rica</button>
-        <button data-cv-tab="ni" role="tab" onClick="{{ selNi }}" style="display: flex; align-items: center; gap: 9px; font-family: var(--font-body,'Figtree',sans-serif); font-size: 15px; font-weight: 700; color: var(--tinta); background: #fff; border: 1px solid var(--sand); padding: 11px 20px; border-radius: 999px; cursor: pointer;"><span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; opacity: .55;">NI</span>Nicaragua</button>
-        <button data-cv-tab="es" role="tab" onClick="{{ selEs }}" style="display: flex; align-items: center; gap: 9px; font-family: var(--font-body,'Figtree',sans-serif); font-size: 15px; font-weight: 700; color: var(--tinta); background: #fff; border: 1px solid var(--sand); padding: 11px 20px; border-radius: 999px; cursor: pointer;"><span style="font-size: 11px; font-weight: 800; letter-spacing: .1em; opacity: .55;">ES</span>Spain</button>
-      </div>
-
-      <div style="margin-top: 22px;">
-        <div data-cv-panel="mx" role="tabpanel" style="background: #fff; border-radius: var(--radius-lg,20px); border-left: 6px solid var(--indigo); box-shadow: var(--shadow-md); padding: clamp(24px,3vw,40px); display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
+      <div style="margin-top: 24px;">
+        <div data-cv-panel="mx" role="tabpanel" style="background: var(--color-bg); border: 1px solid var(--color-divider); border-top: 3px solid var(--color-accent); padding: clamp(24px,3vw,40px); display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
           <div>
-            <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;"><h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0; line-height: 1;">Mexico</h3><span style="font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--soft); text-transform: uppercase;">CV · México</span></div>
-            <div style="margin-top: 20px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--terracota); margin-bottom: 6px;">Focus</div><p style="font-size: 17px; font-weight: 700; line-height: 1.4; margin: 0; color: var(--tinta);">Project Management · BIM · Preconstruction</p></div>
-            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 6px;">Availability</div><p style="font-size: 15px; line-height: 1.6; margin: 0; color: var(--soft);">Immediate start in Mexico. Hiring of specialized managerial and technical staff is exempt from Art. 7 of the LFT; temporary residence by job offer before the INM.</p></div>
+            <h3 style="margin: 0;">Mexico</h3>
+            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;">Focus</div><p style="font-size: 16px; font-weight: 800; line-height: 1.4; margin: 0;">Project Management · BIM · Preconstruction</p></div>
+            <div style="margin-top: 16px;"><div class="text-muted" style="font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px;">Availability</div><p class="text-muted" style="font-size: 14.5px; line-height: 1.6; margin: 0;">Immediate start in Mexico. Hiring of specialized managerial and technical staff is exempt from Art. 7 of the LFT; temporary residence by job offer before the INM.</p></div>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_MX.pdf" download target="_blank" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--terracota); padding: 13px 24px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--soft); word-break: break-all;">CV_Orelio_Martinez_MX.pdf</span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_MX.pdf" download target="_blank" class="btn btn-primary">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--color-text); opacity: .55; word-break: break-all;">CV_Orelio_Martinez_MX.pdf</span></div>
         </div>
-        <div data-cv-panel="cr" role="tabpanel" style="background: #fff; border-radius: var(--radius-lg,20px); border-left: 6px solid var(--indigo); box-shadow: var(--shadow-md); padding: clamp(24px,3vw,40px); display: none; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
+        <div data-cv-panel="cr" role="tabpanel" style="background: var(--color-bg); border: 1px solid var(--color-divider); border-top: 3px solid var(--color-accent); padding: clamp(24px,3vw,40px); display: none; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
           <div>
-            <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;"><h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0; line-height: 1;">Costa Rica</h3><span style="font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--soft); text-transform: uppercase;">CV · Costa Rica</span></div>
-            <div style="margin-top: 20px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--terracota); margin-bottom: 6px;">Focus</div><p style="font-size: 17px; font-weight: 700; line-height: 1.4; margin: 0; color: var(--tinta);">BIM · Production &amp; Estimation for International Projects</p></div>
-            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 6px;">Availability</div><p style="font-size: 15px; line-height: 1.6; margin: 0; color: var(--soft);">U.S. citizen, with an expedited process before the DGME. Oriented to service and technical-production centers serving international clients — no CFIA membership required.</p></div>
+            <h3 style="margin: 0;">Costa Rica</h3>
+            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;">Focus</div><p style="font-size: 16px; font-weight: 800; line-height: 1.4; margin: 0;">BIM · Production &amp; Estimation for International Projects</p></div>
+            <div style="margin-top: 16px;"><div class="text-muted" style="font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px;">Availability</div><p class="text-muted" style="font-size: 14.5px; line-height: 1.6; margin: 0;">U.S. citizen, with an expedited process before the DGME. Oriented to service and technical-production centers serving international clients — no CFIA membership required.</p></div>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_CR.pdf" download target="_blank" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--terracota); padding: 13px 24px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--soft); word-break: break-all;">CV_Orelio_Martinez_CR.pdf</span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_CR.pdf" download target="_blank" class="btn btn-primary">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--color-text); opacity: .55; word-break: break-all;">CV_Orelio_Martinez_CR.pdf</span></div>
         </div>
-        <div data-cv-panel="ni" role="tabpanel" style="background: #fff; border-radius: var(--radius-lg,20px); border-left: 6px solid var(--indigo); box-shadow: var(--shadow-md); padding: clamp(24px,3vw,40px); display: none; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
+        <div data-cv-panel="ni" role="tabpanel" style="background: var(--color-bg); border: 1px solid var(--color-divider); border-top: 3px solid var(--color-accent); padding: clamp(24px,3vw,40px); display: none; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
           <div>
-            <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;"><h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0; line-height: 1;">Nicaragua</h3><span style="font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--soft); text-transform: uppercase;">CV · Nicaragua</span></div>
-            <div style="margin-top: 20px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--terracota); margin-bottom: 6px;">Focus</div><p style="font-size: 17px; font-weight: 700; line-height: 1.4; margin: 0; color: var(--tinta);">Architecture Concentration · Design &amp; Project Direction</p></div>
-            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 6px;">Availability</div><p style="font-size: 15px; line-height: 1.6; margin: 0; color: var(--soft);">Originally from Nicaragua. Available for projects and collaborations, remote or on-site.</p></div>
+            <h3 style="margin: 0;">Nicaragua</h3>
+            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;">Focus</div><p style="font-size: 16px; font-weight: 800; line-height: 1.4; margin: 0;">Architecture Concentration · Design &amp; Project Direction</p></div>
+            <div style="margin-top: 16px;"><div class="text-muted" style="font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px;">Availability</div><p class="text-muted" style="font-size: 14.5px; line-height: 1.6; margin: 0;">Originally from Nicaragua. Available for projects and collaborations, remote or on-site.</p></div>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_NI.pdf" download target="_blank" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--terracota); padding: 13px 24px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--soft); word-break: break-all;">CV_Orelio_Martinez_NI.pdf</span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_NI.pdf" download target="_blank" class="btn btn-primary">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--color-text); opacity: .55; word-break: break-all;">CV_Orelio_Martinez_NI.pdf</span></div>
         </div>
-        <div data-cv-panel="es" role="tabpanel" style="background: #fff; border-radius: var(--radius-lg,20px); border-left: 6px solid var(--indigo); box-shadow: var(--shadow-md); padding: clamp(24px,3vw,40px); display: none; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
+        <div data-cv-panel="es" role="tabpanel" style="background: var(--color-bg); border: 1px solid var(--color-divider); border-top: 3px solid var(--color-accent); padding: clamp(24px,3vw,40px); display: none; grid-template-columns: 1.4fr 1fr; gap: clamp(20px,3vw,40px); align-items: start;">
           <div>
-            <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;"><h3 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(24px,3vw,34px); margin: 0; line-height: 1;">Spain</h3><span style="font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--soft); text-transform: uppercase;">CV · España</span></div>
-            <div style="margin-top: 20px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--terracota); margin-bottom: 6px;">Focus</div><p style="font-size: 17px; font-weight: 700; line-height: 1.4; margin: 0; color: var(--tinta);">BIM · Project &amp; Budget Management</p></div>
-            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin-bottom: 6px;">Availability</div><p style="font-size: 15px; line-height: 1.6; margin: 0; color: var(--soft);">Immediate start in Spain via the Highly Qualified Professional route (Ley 14/2013, UGE-CE) or the general employed-worker regime. Degree homologation in process.</p></div>
+            <h3 style="margin: 0;">Spain</h3>
+            <div style="margin-top: 18px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 6px;">Focus</div><p style="font-size: 16px; font-weight: 800; line-height: 1.4; margin: 0;">BIM · Project &amp; Budget Management</p></div>
+            <div style="margin-top: 16px;"><div class="text-muted" style="font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px;">Availability</div><p class="text-muted" style="font-size: 14.5px; line-height: 1.6; margin: 0;">Immediate start in Spain via the Highly Qualified Professional route (Ley 14/2013, UGE-CE) or the general employed-worker regime. Degree homologation in process.</p></div>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_ES-4099580c.pdf" download target="_blank" style="font-size: 15px; font-weight: 700; color: #fff; background: var(--terracota); padding: 13px 24px; border-radius: 999px; text-decoration: none; box-shadow: var(--shadow-sm);" style-hover="background: var(--accent-deep);">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--soft); word-break: break-all;">CV_Orelio_Martinez_ES.pdf</span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;"><a href="uploads/CV_Orelio_Martinez_ES-4099580c.pdf" download target="_blank" class="btn btn-primary">Download CV</a><span style="font-family: ui-monospace,SFMono-Regular,Menlo,monospace; font-size: 12px; color: var(--color-text); opacity: .55; word-break: break-all;">CV_Orelio_Martinez_ES.pdf</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer id="contact" style="background: linear-gradient(135deg,#a83017 0%,#c0381c 55%,#8f2a12 100%); color: #f3d9c9;">
-    <div class="sarape"><span style="background:var(--rosa)"></span><span style="background:var(--amarillo)"></span><span style="background:var(--verde)"></span><span style="background:var(--indigo)"></span></div>
-    <div class="wrap" style="padding-top: clamp(48px,7vw,88px); padding-bottom: clamp(40px,6vw,64px);">
-      <span style="font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--amarillo);">Let's build</span>
-      <h2 style="font-family: var(--font-heading,'Caprasimo',serif); font-size: clamp(30px,5vw,56px); margin: 12px 0 0; line-height: 1.04; color: #fff; max-width: 20ch; text-wrap: balance;">Have a site to survey or a project to build?</h2>
-      <p style="font-size: 17px; line-height: 1.55; max-width: 48ch; margin: 20px 0 32px; color: #f6ddc9;">From a topographic survey and appraisal support to full design and construction — tell me about your property and I'll get you a clear quote.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 14px;">
-        <a href="mailto:oreliomartinez0@gmail.com" style="font-size: 16px; font-weight: 700; color: #8f2a12; background: var(--amarillo); padding: 15px 28px; border-radius: 999px; text-decoration: none;" style-hover="background: #fff;">oreliomartinez0@gmail.com</a>
-        <a href="tel:+17608830683" style="font-size: 16px; font-weight: 700; color: #fff; background: transparent; padding: 13px 26px; border-radius: 999px; text-decoration: none; border: 2px solid rgba(255,255,255,.6);" style-hover="background: rgba(255,255,255,.14);">(760) 883-0683</a>
-        <a href="https://www.linkedin.com/in/orelio-martinez-assoc-aia-ncarb-17aa23368" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 700; color: #fff; background: transparent; padding: 13px 26px; border-radius: 999px; text-decoration: none; border: 2px solid rgba(255,255,255,.6);" style-hover="background: rgba(255,255,255,.14);">LinkedIn →</a>
+  <footer id="contact" style="background: var(--color-accent); color: var(--color-bg);">
+    <div class="wrap" style="padding-top: clamp(56px,7vw,88px); padding-bottom: clamp(40px,6vw,56px);">
+      <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--color-bg); opacity: .8;">Let's build</span>
+      <h2 style="font-size: clamp(32px,5vw,56px); margin: 14px 0 0; line-height: 1.05; color: var(--color-bg); max-width: 20ch; text-wrap: balance;">Have a site to survey or a project to build?</h2>
+      <p style="font-size: 16px; line-height: 1.55; max-width: 48ch; margin: 20px 0 30px; color: var(--color-bg); opacity: .9;">From a topographic survey and appraisal support to full design and construction — tell me about your property and I'll get you a clear quote.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="mailto:oreliomartinez0@gmail.com" class="btn btn-secondary" style="color: var(--color-bg); border-color: var(--color-bg);" style-hover="background: color-mix(in srgb, var(--color-bg) 16%, transparent);">oreliomartinez0@gmail.com</a>
+        <a href="tel:+17608830683" class="btn btn-ghost" style="color: var(--color-bg);" style-hover="background: color-mix(in srgb, var(--color-bg) 16%, transparent);">(760) 883-0683</a>
+        <a href="https://www.linkedin.com/in/orelio-martinez-assoc-aia-ncarb-17aa23368" target="_blank" rel="noopener" class="btn btn-ghost" style="color: var(--color-bg);" style-hover="background: color-mix(in srgb, var(--color-bg) 16%, transparent);">LinkedIn →</a>
       </div>
-      <p style="font-size: 15px; color: var(--amarillo); margin: 20px 0 0;">Chicago, Illinois · U.S. Citizen · Bilingual EN/ES</p>
-      <div style="margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(243,217,201,.3); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #f0cba6;">
+      <p style="font-size: 14px; color: var(--color-bg); opacity: .85; margin: 22px 0 0;">Chicago, Illinois · U.S. Citizen · Bilingual EN/ES</p>
+      <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--color-bg) 30%, transparent); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--color-bg); opacity: .85;">
         <span>© 2026 Orelio Marcelo Martínez</span>
-        <span style="display: flex; gap: 18px; flex-wrap: wrap;"><a href="uploads/Orelio_Martinez_Resume_US-adfaa9db.pdf" data-resume target="_blank" style="color: var(--amarillo); text-decoration: underline;">Résumé (EN, PDF)</a><a href="uploads/CV_Orelio_Martinez_ES-4099580c.pdf" target="_blank" style="color: var(--amarillo); text-decoration: underline;">CV (ES, PDF)</a></span>
+        <span style="display: flex; gap: 18px; flex-wrap: wrap;"><a href="uploads/Orelio_Martinez_Resume_US-adfaa9db.pdf" data-resume target="_blank" style="color: var(--color-bg); text-decoration: underline;">Résumé (EN, PDF)</a><a href="uploads/CV_Orelio_Martinez_ES-4099580c.pdf" target="_blank" style="color: var(--color-bg); text-decoration: underline;">CV (ES, PDF)</a></span>
       </div>
     </div>
   </footer>
 
 </div>
+
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
   &quot;$preview&quot;: { &quot;width&quot;: 1280, &quot;height&quot;: 900 },
-  &quot;accent&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#c0381c&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#c0381c&quot;, &quot;#e0197f&quot;, &quot;#15369e&quot;, &quot;#2c6e49&quot;], &quot;section&quot;: &quot;Theme&quot; },
+  &quot;accent&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#a9642c&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#a9642c&quot;, &quot;#6b4226&quot;, &quot;#8c3a3a&quot;, &quot;#c17f2c&quot;], &quot;section&quot;: &quot;Theme&quot; },
   &quot;portfolioColumns&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;3&quot;, &quot;options&quot;: [&quot;2&quot;, &quot;3&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Layout&quot; },
   &quot;showPortrait&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot; }
 }">
@@ -471,9 +465,9 @@ class Component extends DCLogic {
     this.rootRef.querySelectorAll('[data-cv-panel]').forEach(p => { p.style.display = (p.getAttribute('data-cv-panel') === code) ? 'grid' : 'none'; });
     this.rootRef.querySelectorAll('[data-cv-tab]').forEach(b => {
       const on = b.getAttribute('data-cv-tab') === code;
-      b.style.background = on ? 'var(--indigo)' : '#fff';
-      b.style.color = on ? '#fff' : 'var(--tinta)';
-      b.style.borderColor = on ? 'var(--indigo)' : 'var(--sand)';
+      b.style.background = on ? 'var(--color-accent)' : 'transparent';
+      b.style.color = on ? 'var(--color-bg)' : 'var(--color-text)';
+      b.style.borderColor = on ? 'var(--color-accent)' : 'var(--color-divider)';
       b.setAttribute('aria-selected', on ? 'true' : 'false');
     });
   }
@@ -492,13 +486,14 @@ class Component extends DCLogic {
       "Topographic & Cadastral Surveying":"Levantamientos topográficos y catastrales","Architectural Design & Documentation":"Diseño y documentación arquitectónica","Steel Structures & Construction":"Estructuras de acero y construcción","GNSS Georeferencing & Layout":"Georreferenciación GNSS y replanteo","Geotechnical & Soil Studies":"Estudios geotécnicos y de suelos","BIM, 3D Modeling & Rendering":"BIM, modelado 3D y renderizado",
       "Selected work":"Proyectos","Field work and projects across Nicaragua & the U.S.":"Trabajo de campo y proyectos en Nicaragua y EE. UU.","In the field":"En el campo",
       "Writing & research":"Escritura e investigación",
-      "No Minimal — an essay on Latin American architecture.":"No Minimal — un ensayo sobre la arquitectura latinoamericana.",
-      "An authored essay and interactive site arguing why Latin America cannot be minimalist — a manifesto on color, climate, memory, and identity, across six dimensions.":"Un ensayo de autoría propia y sitio interactivo sobre por qué América Latina no puede ser minimalista — un manifiesto sobre el color, el clima, la memoria y la identidad, a través de seis dimensiones.",
-      "History":"Historia","Climate":"Clima","Culture":"Cultura","Economy":"Economía","Urbanism":"Urbanismo","Identity":"Identidad",
-      "Visit the site →":"Visitar el sitio →","Read the full essay":"Leer el ensayo completo",
+      "Latin America cannot be minimalist.":"América Latina no puede ser minimalista.",
+      "Minimalism is an imported neutrality. Here, building happens through necessity, mixture, and improvisation — color isn't excess, it's life, memory, and identity.":"El minimalismo es una neutralidad importada. Aquí se construye desde la necesidad, la mezcla y la improvisación: el color no es exceso, es vida, memoria e identidad.",
+      "Construction":"Construcción","Light & Shadow":"Luz &amp; sombra","Culture":"Cultura","Patio":"Patio","Manifesto":"Manifiesto","Thesis":"Tesis",
+      "Enter the work ↓":"Entrar a la obra ↓","Read the full essay":"Leer el ensayo completo",
       "Authored & designed by Orelio Martínez · AIA Chicago · 2026":"Escrito y diseñado por Orelio Martínez · AIA Chicago · 2026",
       "A career built site by site.":"Una carrera construida obra por obra.",
-      "Owner & General Manager":"Propietario y gerente general","General Manager":"Gerente general","Co-Founder & General Manager":"Cofundador y Gerente General","Project Engineer & Estimator":"Ingeniero de Proyectos y Estimador","Project Designer · Land Surveyor · Project Manager":"Proyectista · Topógrafo · Gerente de proyecto","Architect · Project Manager · Estimator":"Arquitecto · Gerente de proyecto · Estimador","Architect · Land Surveyor · Project Manager":"Arquitecto · Topógrafo · Gerente de proyecto","Assistant Project Manager — Internship":"Asistente de gerente de proyecto — Pasantía","Architectural Advisor":"Asesor arquitectónico","Project Lead":"Líder de proyecto",
+      "General Manager":"Gerente general","Owner & General Manager":"Propietario y Gerente General","Co-Founder & General Manager":"Cofundador y Gerente General",
+      "Founded and wholly own Veritas Drafting, directing its full operational, financial, and client-service performance — a CAD drafting and 3D-modeling outsourcing firm with a production team in Nicaragua serving U.S.-based AEC clients. Built standardized workflows for drafting, modeling, rendering, and QA, and serve as primary technical contact translating client requirements into on-time, on-spec delivery.":"Fundé y soy propietario único de Veritas Drafting, dirigiendo su desempeño operativo, financiero y de servicio al cliente — una firma de dibujo CAD y modelado 3D con un equipo de producción en Nicaragua que atiende a clientes AEC en EE. UU. Creé flujos de trabajo estandarizados para dibujo, modelado, renderizado y control de calidad, y soy el contacto técnico principal que traduce los requerimientos del cliente en entregas puntuales y conforme a especificación.","Project Engineer & Estimator":"Ingeniero de Proyectos y Estimador","Project Designer · Land Surveyor · Project Manager":"Proyectista · Topógrafo · Gerente de proyecto","Architectural Advisor":"Asesor arquitectónico","Project Lead":"Líder de proyecto",
       "Additional experience":"Experiencia adicional","Remote · U.S. & Nicaragua":"Remoto · EE. UU. y Nicaragua","Pro Sales Associate · Oct 2025 – Jan 2026":"Asesor de ventas Pro · Oct 2025 – Ene 2026","Associate Customer Success · Dec 2023 – Nov 2024":"Associate Customer Success · Dic 2023 – Nov 2024","Customer Care Advisor · Aug 2022 – Nov 2023":"Asesor de atención al cliente · Ago 2022 – Nov 2023",
       "Supported contractors and commercial customers with orders, delivery coordination, and product selection for construction projects.":"Apoyé a contratistas y clientes comerciales con pedidos, coordinación de entregas y selección de productos para proyectos de construcción.",
       "Partnered with customers to drive product adoption and value realization, building long-term client relationships (remote).":"Colaboré con clientes para impulsar la adopción de producto y la generación de valor, construyendo relaciones a largo plazo (remoto).",
@@ -506,7 +501,7 @@ class Component extends DCLogic {
       "BIM Methodology":"Metodología BIM","Model coordination":"Coordinación de modelos","Deliverable QA":"Control de calidad",
       "Chicago, Illinois · U.S. Citizen · Bilingual EN/ES":"Chicago, Illinois · Ciudadano de EE. UU. · Bilingüe EN/ES","Résumé (EN, PDF)":"Résumé (EN, PDF)","CV (ES, PDF)":"CV (ES, PDF)",
       "Credentials":"Credenciales","Certifications & licenses":"Certificaciones y licencias","Toolkit":"Herramientas","Skills & software":"Habilidades y software","Design & Modeling":"Diseño y modelado","Rendering & Visualization":"Renderizado y visualización","Project & Business Systems":"Sistemas de proyecto y negocio","Education":"Educación",
-      "Let's build":"Construyamos","Have a site to survey or a project to build?":"¿Tienes un terreno que levantar o un proyecto que construir?","From a topographic survey and appraisal support to full design and construction — tell me about your property and I'll get you a clear quote.":"Desde un levantamiento topográfico y apoyo en avalúos hasta diseño y construcción — cuéntame sobre tu propiedad y te doy una cotización clara.","Download résumé (PDF)":"Descargar CV (PDF)",
+      "Let's build":"Construyamos","Have a site to survey or a project to build?":"¿Tienes un terreno que levantar o un proyecto que construir?","From a topographic survey and appraisal support to full design and construction — tell me about your property and I'll get you a clear quote.":"Desde un levantamiento topográfico y apoyo en avalúos hasta diseño y construcción — cuéntame sobre tu propiedad y te doy una cotización clara.",
       "Chicago, Illinois · Assoc. AIA · NCARB · PMP · Bilingual EN/ES":"Chicago, Illinois · Assoc. AIA · NCARB · PMP · Bilingüe EN/ES",
       "I'm Orelio Marcelo Martínez — a Chicago-based civil engineer with an architecture concentration (Assoc. AIA · NCARB), co-founder of Martínez-Segura Multiservicios and general manager of Veritas Drafting. I take building, infrastructure, and energy projects from estimating and survey through BIM, construction, and close-out — across U.S. and Latin American markets.":"Soy Orelio Marcelo Martínez — ingeniero civil con mención en arquitectura (Assoc. AIA · NCARB), radicado en Chicago, cofundador de Martínez-Segura Multiservicios y gerente general de Veritas Drafting. Llevo proyectos de edificación, infraestructura y energía desde la estimación y el levantamiento hasta el BIM, la construcción y el cierre — en los mercados de EE. UU. y Latinoamérica.",
       "Georeferenced altimetry with contour lines and site detail. Deslinde, amojonamiento, and plans valid for municipal cadastral filing — with the digital CAD file for design.":"Altimetría georreferenciada con curvas de nivel y detalles del sitio. Deslinde, amojonamiento y planos con validez para trámite ante catastro municipal — con el archivo CAD digital para diseño.",
@@ -515,7 +510,7 @@ class Component extends DCLogic {
       "Georeferenced points with GNSS receivers and total station for setting-out, construction control, and coordinate-accurate plans.":"Puntos georreferenciados con receptores GNSS y estación total para replanteo, control de obra y planos con coordenadas precisas.",
       "Soil boring and geotechnical investigation that define ground conditions and support foundation and structural design.":"Sondeos y estudios geotécnicos que definen las condiciones del terreno y fundamentan el diseño de fundaciones y estructuras.",
       "Revit and Civil 3D models with photoreal rendering in V-Ray, Lumion, D5, and Enscape — so clients see the project before it is built.":"Modelos en Revit y Civil 3D con renderizado fotorrealista en V-Ray, Lumion, D5 y Enscape — para que el cliente vea el proyecto antes de construirlo.",
-      "Surveying":"Topografía","Industrial":"Industrial","Steel":"Acero","Institutional":"Institucional","Geotechnical":"Geotecnia","United States":"EE. UU.","Studio work":"Trabajo de estudio",
+      "Surveying":"Topografía","Industrial":"Industrial","Steel":"Acero","Institutional":"Institucional","Geotechnical":"Geotecnia","United States":"EE. UU.","Studio work":"Trabajo de estudio","3D / BIM":"3D / BIM",
       "Topographic & Cadastral Survey":"Levantamiento topográfico y catastral",
       "Industrial Warehouse — Steel Structure":"Nave industrial — estructura de acero",
       "Steel Structure Fabrication":"Fabricación de estructuras de acero",
@@ -533,19 +528,13 @@ class Component extends DCLogic {
       "Structural steel erection and large-scale event structures in the U.S., supporting project management and precise field coordination.":"Montaje de estructuras de acero y estructuras de eventos a gran escala en EE. UU., apoyando la gestión de proyecto y la coordinación precisa en campo.",
       "As-built and boundary survey with total station, defining property lines and dimensions of an existing structure for legal filing and renovation design.":"Levantamiento de estado actual y de linderos con estación total, definiendo las líneas de propiedad y dimensiones de una estructura existente para trámite legal y diseño de remodelación.",
       "2023 – Present":"2023 – Actualidad","Jan 2026 – Present":"Ene 2026 – Actualidad","Oct 2020 – Aug 2022":"Oct 2020 – Ago 2022",
-      "Remote · United States":"Remoto · EE. UU.","Managua · Nicaragua":"Managua · Nicaragua",
+      "Managua · Nicaragua":"Managua · Nicaragua",
       "Direct the full operational, financial, and client-service performance of an owner-operated CAD drafting and 3D-modeling outsourcing firm, with a production team in Nicaragua serving U.S.-based AEC clients. Built standardized workflows for drafting, modeling, rendering, and QA, and serve as primary technical contact translating client requirements into on-time, on-spec delivery.":"Dirijo el desempeño operativo, financiero y de servicio al cliente de una firma propia de dibujo CAD y modelado 3D, con un equipo de producción en Nicaragua que atiende a clientes AEC en EE. UU. Creé flujos de trabajo estandarizados para dibujo, modelado, renderizado y control de calidad, y soy el contacto técnico principal que traduce los requerimientos del cliente en entregas puntuales y conforme a especificación.",
       "Co-founder of a two-partner multiservice engineering firm delivering topographic and cadastral surveying, georeferenced mapping, property-appraisal support, architectural design, and construction. Produce georeferenced surveys, contour mapping, and digital CAD site files for design, permitting, and valuation — owning pricing, contracting, invoicing, and end-to-end delivery while coordinating field crews and suppliers across concurrent projects.":"Cofundador de una firma de ingeniería multiservicio de dos socios que ofrece levantamientos topográficos y catastrales, cartografía georreferenciada, apoyo en avalúos, diseño arquitectónico y construcción. Produzco levantamientos georreferenciados, planos de curvas de nivel y archivos CAD para diseño, tramitación y valoración — encargándome de precios, contratación, facturación y entrega integral, y coordinando cuadrillas de campo y proveedores en proyectos simultáneos.",
       "Managed the full lifecycle of industrial, energy, and infrastructure projects — estimating, budgeting, scheduling, and execution through close-out. Prepared cost estimates, quantity takeoffs, and budgets for bids and cost control, and supervised field details through client sign-off. Key projects: SINSA warehouse (Ocotal), solar-panel installations (Chinandega & Jinotega), pipeline design and installation (El Rama), and Cemex facility upgrades (Managua).":"Gestioné el ciclo completo de proyectos industriales, energéticos y de infraestructura — estimación, presupuesto, programación y ejecución hasta el cierre. Preparé estimaciones de costo, cuantificaciones y presupuestos para licitaciones y control de costos, y supervisé detalles en campo hasta la aprobación del cliente. Proyectos clave: nave SINSA (Ocotal), instalaciones fotovoltaicas (Chinandega y Jinotega), diseño e instalación de tubería (El Rama) y mejoras en planta Cemex (Managua).",
       "Led architectural projects from concept through construction documentation for residential, institutional, and religious-facility clients, managing scope, budget, and schedule. Performed land surveying and boundary analysis and directed teams to resolve design conflicts and maintain constructability. Portfolio: St. Helen's American Academy (Chinandega), Valdivia Residence (Jinotepe), Santos Home (Mateare), Lacayo renovation (Managua), and Iglesia “De Todos los Santos” (Managua).":"Lideré proyectos arquitectónicos desde el concepto hasta la documentación constructiva para clientes residenciales, institucionales y religiosos, gestionando alcance, presupuesto y cronograma. Realicé levantamientos y análisis de linderos y dirigí equipos para resolver conflictos de diseño y mantener la constructibilidad. Portafolio: St. Helen's American Academy (Chinandega), Residencia Valdivia (Jinotepe), Vivienda Santos (Mateare), rehabilitación Lacayo (Managua) e Iglesia “De Todos los Santos” (Managua).",
       "Mentored multidisciplinary teams of emerging architects and engineers on projects advancing national infrastructure and urban development, reviewing drawings and design proposals for code compliance, feasibility, and design quality.":"Orienté a equipos multidisciplinarios de arquitectos e ingenieros emergentes en proyectos que impulsan la infraestructura nacional y el desarrollo urbano, revisando planos y propuestas de diseño por cumplimiento normativo, factibilidad y calidad de diseño.",
       "Led the “Vehicle Count for Road Design” study for the La Concepción–La Borgoña corridor, directing field data collection and traffic analysis; findings were adopted by the Department of Transportation to inform new roadway design.":"Dirigí el estudio de “Aforo Vehicular para Diseño Vial” del corredor La Concepción–La Borgoña, dirigiendo la toma de datos en campo y el análisis de tráfico; las conclusiones fueron adoptadas por el Departamento de Transporte para el nuevo trazado.",
-      "Founder and owner of a multiservice engineering firm providing topographic and cadastral surveying, georeferenced mapping, property-appraisal support, architectural design, and construction and remodeling. I own the full operation — pricing, quoting, contracting, field crews, and delivery from first contact through payment and close-out.":"Fundador y propietario de una empresa de multiservicios de ingeniería que ofrece levantamientos topográficos y catastrales, mapeo georreferenciado, apoyo en avalúos, diseño arquitectónico y construcción y remodelación. Dirijo toda la operación — precios, cotización, contratación, cuadrillas de campo y entrega, desde el primer contacto hasta el pago y el cierre.",
-      "Direct the operational, financial, and client-service performance of a drafting and 3D-modeling outsourcing firm serving AEC clients. Built standardized workflows for drafting, modeling, rendering, and QA, and serve as primary contact translating client requirements into on-time, on-spec production.":"Dirijo el desempeño operativo, financiero y de servicio al cliente de una firma de dibujo y modelado 3D que atiende a clientes AEC. Creé flujos de trabajo estandarizados para dibujo, modelado, renderizado y control de calidad, y soy el contacto principal que traduce los requerimientos del cliente en una producción puntual y conforme.",
-      "Managed the full project lifecycle for industrial, energy, and infrastructure projects — estimating, budgeting, scheduling, and execution through close-out. Prepared takeoffs and budgets, supervised field details, and coordinated contractors and suppliers across multi-site work.":"Gestioné el ciclo completo de proyectos industriales, energéticos y de infraestructura — estimación, presupuesto, programación y ejecución hasta el cierre. Preparé cuantificaciones y presupuestos, supervisé detalles en campo y coordiné contratistas y proveedores en obras multisitio.",
-      "Led architectural projects from concept through construction documentation for residential, institutional, and religious-facility clients, performing land surveying and boundary analysis and directing teams to resolve design conflicts and maintain constructability.":"Lideré proyectos arquitectónicos desde el concepto hasta la documentación constructiva para clientes residenciales, institucionales y religiosos, realizando levantamientos y análisis de linderos y dirigiendo equipos para resolver conflictos de diseño y mantener la constructibilidad.",
-      "Supported project-management teams on active commercial construction projects — assisting with submittals, RFIs, cost tracking, schedule updates, and subcontractor coordination while learning DPR's self-perform and lean-construction practices.":"Apoyé a los equipos de gestión de proyecto en obras comerciales activas — asistiendo con submittals, RFIs, control de costos, actualización de cronogramas y coordinación de subcontratistas, mientras aprendía las prácticas de autoejecución y construcción lean de DPR.",
-      "Supervised and mentored emerging architects and engineers on projects advancing national infrastructure and urban development, reviewing drawings for code compliance, feasibility, and design quality.":"Supervisé y orienté a arquitectos e ingenieros emergentes en proyectos que impulsan la infraestructura nacional y el desarrollo urbano, revisando planos por cumplimiento de códigos, factibilidad y calidad de diseño.",
       "Associate Architect":"Arquitecto Asociado","Certified Member":"Miembro Certificado","NCEES Certified":"Certificado NCEES","AXP Supervisor / Architect":"Supervisor AXP / Arquitecto",
       "B.Sc. Civil Engineering":"Lic. en Ingeniería Civil","Minor in Architecture":"Minor en Arquitectura",
       "Résumé":"CV","Résumé by country":"CV por país","One profile, tuned to four markets.":"Un solo perfil, ajustado a cuatro mercados.",
@@ -583,9 +572,11 @@ class Component extends DCLogic {
   applyTweaks() {
     const el = this.rootRef;
     if (!el) return;
-    if (this.props.accent) el.style.setProperty('--accent', this.props.accent);
+    const accent = this.props.accent || '#a9642c';
+    el.style.setProperty('--color-accent', accent);
+    el.style.setProperty('--color-accent-700', `color-mix(in srgb, ${accent} 72%, black)`);
     const cols = this.props.portfolioColumns ?? '3';
-    el.style.setProperty('--pf-cols', `repeat(${cols}, minmax(0,1fr))`);
+    el.style.setProperty('--pf-cols', cols);
   }
   renderVals() {
     return {
@@ -601,6 +592,7 @@ class Component extends DCLogic {
     };
   }
 }
+
 </script>
 </body>
 </html>
